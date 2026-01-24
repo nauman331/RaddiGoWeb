@@ -1,0 +1,32 @@
+/* Primary Color: Green (Recycling/Pakistan flag green) - #00A859
+
+Secondary Color: Earthy Brown or Cardboard Beige - #D2B48C
+
+Accent: Bright Orange (Action buttons) - #FF8C00
+
+Font: A clean Sans-Serif (e.g., Inter or Poppins) mixed with a localized font for headings (like Hind). */
+
+@import "tailwindcss";
+
+@theme {
+ --color-brand-green: #00A859;
+ --color-brand-dark: #0B3D2E;
+ --color-brand-light: #F3F8F5;
+ --color-brand-accent: #FF8C00;
+ --font-sans: 'Inter', sans-serif;
+ --font-heading: 'Hind', sans-serif;
+}
+
+/* Simple marquee animation used by the hero/announcement bar.
+	 This defines keyframes and a small utility class `animate-marquee`.
+	 Adjust timing as needed. */
+@keyframes marquee {
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+	display: inline-block;
+	will-change: transform;
+	animation: marquee 25s linear infinite;
+}
