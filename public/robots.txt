@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# ChatGPT Search Bot (Live Browsing)
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT Training Bot (To be in the next model update)
+User-agent: GPTBot
+Allow: /
+
+# Google Gemini Bot
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI Bot
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.raddigo.tech/sitemap.xml
