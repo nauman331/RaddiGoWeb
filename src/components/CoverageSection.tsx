@@ -1,33 +1,45 @@
 import React from 'react'
 
 const cities = [
-  { name: 'Lahore', note: 'Main launch city' },
-  { name: 'Islamabad', note: 'Coming soon' },
-  { name: 'Rawalpindi', note: 'Coming soon' },
-  { name: 'Karachi', note: 'Coming soon' },
+    { name: 'Lahore', note: 'Main launch city', live: true },
+    { name: 'Islamabad', note: 'Coming soon', live: false },
+    { name: 'Rawalpindi', note: 'Coming soon', live: false },
+    { name: 'Karachi', note: 'Coming soon', live: false },
 ]
 
 const CoverageSection: React.FC = () => {
-  return (
-    <section className="bg-white py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-brand-green font-semibold uppercase tracking-[0.2em] text-sm">City coverage</p>
-          <h2 className="text-3xl font-heading font-bold text-brand-dark mt-3">Expanding from Lahore to more cities across Pakistan</h2>
-          <p className="text-slate-600 mt-4 text-lg">We are starting strong in Lahore and preparing to bring the same fast pickup experience to more urban neighborhoods soon.</p>
-        </div>
+    return (
+        <section className="bg-white px-6 py-20" aria-labelledby="coverage-heading">
+            <div className="mx-auto max-w-7xl">
+                <div className="mx-auto max-w-3xl text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">City coverage</p>
+                    <h2 id="coverage-heading" className="mt-3 text-3xl font-heading font-bold text-brand-dark">
+                        Expanding from Lahore to more cities across Pakistan
+                    </h2>
+                    <p className="mt-4 text-lg text-slate-600">
+                        We are starting strong in Lahore and preparing to bring the same fast pickup experience to more urban
+                        neighborhoods soon.
+                    </p>
+                </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cities.map((city) => (
-            <div key={city.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-              <h3 className="text-xl font-bold text-brand-dark">{city.name}</h3>
-              <p className="text-slate-600 mt-2">{city.note}</p>
+                <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {cities.map((city) => (
+                        <li
+                            key={city.name}
+                            className={`rounded-2xl border p-6 shadow-sm ${
+                                city.live ? 'border-brand-green/30 bg-brand-light' : 'border-slate-200 bg-slate-50'
+                            }`}
+                        >
+                            <h3 className="text-xl font-bold text-brand-dark">{city.name}</h3>
+                            <p className={`mt-2 text-sm font-semibold ${city.live ? 'text-brand-green' : 'text-slate-500'}`}>
+                                {city.note}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default CoverageSection

@@ -15,19 +15,23 @@ import FAQSection from '../components/FAQSection'
 
 const Home: React.FC = () => {
     return (
-        <div className='font-sans text-slate-800 antialiased bg-white'>
+        <div className="bg-white font-sans text-slate-800 antialiased">
             <Navbar />
+            {/* Hero renders its own <header>, so main starts after it to
+                keep exactly one top-level header/main/footer landmark set */}
             <Hero />
-            <StatsSection />
-            <Apps />
-            <Process />
-            <AppExperience />
-            <Engineering />
-            <CoverageSection />
-            <CreatorSection />
-            <Testimonials />
-            <FAQSection />
-            <Cta />
+            <main>
+                <StatsSection />
+                <Apps />
+                <Process />
+                <AppExperience />
+                <Engineering />
+                <CoverageSection />
+                <CreatorSection />
+                <Testimonials />
+                <FAQSection />
+                <Cta />
+            </main>
             <Footer />
         </div>
     )

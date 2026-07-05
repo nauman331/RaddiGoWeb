@@ -117,9 +117,6 @@ const Footer: React.FC = () => {
                     {/* Brand + contact — spans full width on mobile, 2 cols on desktop */}
                     <div className="col-span-2 sm:col-span-3 lg:col-span-2">
                         <NavLink to="/" className="flex items-center gap-3">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 font-bold text-brand-green">
-                                RG
-                            </div>
                             <div>
                                 <h3 className="font-heading text-lg font-bold text-brand-dark">RaddiGo</h3>
                                 <p className="max-w-xs text-sm text-slate-500">
