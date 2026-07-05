@@ -16,25 +16,31 @@ const LiveRates: React.FC = () => {
     <div className="min-h-screen bg-white text-slate-800">
       <Navbar />
       <main className="max-w-6xl mx-auto px-6 py-16">
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-brand-green font-semibold uppercase tracking-[0.2em]">Aaj Ki Rates</p>
-          <h1 className="text-4xl font-heading font-bold text-brand-dark mt-3">Transparent rates, bina kisi hidden charges ke.</h1>
-          <p className="mt-4 text-lg text-slate-600">Har ilaqay aur har material ke liye rate update hota rehta hai. Aap apni raddi ka real value janta hai.</p>
+        <div className="text-center max-w-4xl mx-auto">
+          <p className="text-brand-green font-semibold uppercase tracking-[0.2em]">Scrap rates in Lahore</p>
+          <h1 className="text-4xl font-heading font-bold text-brand-dark mt-3">Check the latest scrap prices before you book a pickup</h1>
+          <p className="mt-4 text-lg text-slate-600">RaddiGo helps customers understand current scrap market rates so they can make a better decision before selling paper, plastic, metal, or electronics. Rates vary by material quality, quantity, and local demand.</p>
         </div>
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {rates.map((item) => (
             <div key={item.item} className="rounded-2xl border border-slate-200 bg-brand-light p-6 shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">Live</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">Live rate</p>
               <h2 className="mt-2 text-2xl font-bold text-brand-dark">{item.item}</h2>
               <p className="mt-4 text-xl font-semibold text-slate-700">{item.rate}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 rounded-3xl bg-brand-dark p-8 text-white">
-          <h2 className="text-2xl font-bold">Rate ka matlab?</h2>
-          <p className="mt-3 text-slate-300 max-w-2xl">Hum aap ko sirf market ke current rate nahi dete, balkay aap ki raddi ka sahi value bhi samjha kar transparent pricing provide karte hain.</p>
+        <div className="mt-12 grid lg:grid-cols-2 gap-8">
+          <div className="rounded-3xl bg-brand-dark p-8 text-white">
+            <h2 className="text-2xl font-bold">Why rates matter</h2>
+            <p className="mt-3 text-slate-300">Knowing the scrap price in Lahore helps you compare offers and avoid unfair deals. With RaddiGo, you get a fair and transparent rate instead of a vague verbal quote.</p>
+          </div>
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
+            <h2 className="text-2xl font-bold text-brand-dark">What affects scrap pricing</h2>
+            <p className="mt-3 text-slate-600">Material type, weight, cleanliness, and current market demand all influence the final amount. We aim to keep the pricing simple so every customer understands what they are getting.</p>
+          </div>
         </div>
       </main>
       <Footer />

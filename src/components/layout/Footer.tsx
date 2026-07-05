@@ -24,8 +24,10 @@ const Footer: React.FC = () => {
                             <h4 className="font-semibold mb-2">Company</h4>
                             <ul className="text-sm text-slate-500 space-y-2">
                                 <li><NavLink to="/" className="hover:text-brand-green">Home</NavLink></li>
-                                <li><NavLink to="/how-it-works" className="hover:text-brand-green">Kaise Kaam Karta Hai</NavLink></li>
-                                <li><NavLink to="/safety" className="hover:text-brand-green">Safety</NavLink></li>
+                                <li><NavLink to="/how-it-works" className="hover:text-brand-green">How it works</NavLink></li>
+                                <li><NavLink to="/lahore-pickup" className="hover:text-brand-green">Lahore pickup</NavLink></li>
+                                <li><NavLink to="/business-pickup" className="hover:text-brand-green">Business pickup</NavLink></li>
+                                <li><NavLink to="/faq" className="hover:text-brand-green">FAQ</NavLink></li>
                             </ul>
                         </div>
                         <div>

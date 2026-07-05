@@ -4,43 +4,50 @@ import Heroimg from "../assets/hero.jpeg"
 const Hero: React.FC = () => {
     return (
         <React.Fragment>
-            <header className="relative overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32 bg-brand-light">
-                <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-
+            <header className="relative overflow-hidden bg-[linear-gradient(135deg,#f3f8f5_0%,#ffffff_100%)] pt-12 pb-20 lg:pt-20 lg:pb-28">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,168,89,0.12),transparent_40%)]"></div>
+                <div className="relative mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                     <div className="space-y-6">
-                        <div className="inline-block bg-green-100 text-brand-green px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">
-                            🚀 Lahore mein jald hi shuru
+                        <div className="inline-flex items-center gap-2 rounded-full border border-brand-green/20 bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-brand-green shadow-sm">
+                            <span>●</span> Launching soon in Lahore
                         </div>
-                        <h1 className="text-4xl lg:text-6xl font-heading font-bold text-brand-dark">
-                            Ghar ka kachra? <br />
-                            <span className="text-brand-green">Ab asaan tareeqay se raddi banay ga!</span>
+                        <h1 className="text-4xl font-heading font-bold leading-tight text-brand-dark lg:text-6xl">
+                            Book scrap pickup in minutes <br />
+                            <span className="text-brand-green">and get paid instantly.</span>
                         </h1>
-                        <p className="text-lg text-slate-600 max-w-lg">
-                            Pakistan mein apni raddi bechne ka sab se aasan aur sachcha tareeqa. Pickup book karain, digital tareeqay se weigh karain, aur JazzCash ya EasyPaisa par fauran cash hasil karain.
+                        <p className="max-w-2xl text-lg text-slate-600">
+                            RaddiGo brings the convenience of modern on-demand services to scrap collection in Pakistan. Book pickup, get transparent pricing, and receive instant payment for newspapers, plastic, metal, and electronics.
                         </p>
 
-                        <form id="waitlist" className="flex flex-col sm:flex-row gap-3 max-w-md">
-                            <input type="email" placeholder="Aapka email ya WhatsApp" className="flex-1 px-4 bg-white py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green outline-none" />
-                            <button type="button" className="bg-brand-accent text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition shadow-lg shadow-orange-200">
-                                Waitlist Join Karain
+                        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 shadow-sm"><span className="text-brand-green">✓</span> Doorstep pickup</span>
+                            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 shadow-sm"><span className="text-brand-green">✓</span> Verified captains</span>
+                            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 shadow-sm"><span className="text-brand-green">✓</span> Instant cash</span>
+                        </div>
+
+                        <form id="waitlist" className="flex max-w-xl flex-col gap-3 sm:flex-row">
+                            <input type="email" placeholder="Enter your email or WhatsApp" className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none focus:border-brand-green focus:ring-2 focus:ring-brand-green" />
+                            <button type="button" className="rounded-lg bg-brand-accent px-6 py-3 font-bold text-white shadow-lg shadow-orange-200 transition hover:bg-orange-600">
+                                Join early access
                             </button>
                         </form>
-                        <p className="text-sm text-slate-500">🔒 500+ gharon ne pehle hi apna naam likhwaya hai.</p>
+                        <p className="text-sm text-slate-500">Over 500 homes and businesses have already joined the waitlist.</p>
                     </div>
 
                     <div className="relative">
-                        <div className="absolute -inset-4 bg-brand-green/20 rounded-full blur-3xl opacity-30"></div>
+                        <div className="absolute -inset-4 rounded-full bg-brand-green/20 blur-3xl opacity-30"></div>
+                        <div className="absolute inset-0 rounded-[2rem] border border-brand-green/20"></div>
                         <img src={Heroimg}
-                            alt="RaddiGo App Preview"
-                            className="relative rounded-2xl shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500" />
+                            alt="RaddiGo scrap pickup service in Lahore"
+                            className="relative rounded-[2rem] border-4 border-white shadow-2xl" />
                     </div>
                 </div>
             </header>
 
-            <div className="bg-brand-dark py-3 overflow-hidden whitespace-nowrap">
-                <div className="inline-block animate-marquee text-white text-sm font-mono tracking-wider">
-                    🚨 Aaj ki rates: NewsPaper <span className="text-green-400">Rs. 80/kg</span> • Plastic <span className="text-green-400">Rs. 40/kg</span> • Iron <span className="text-green-400">Rs. 110/kg</span> • Electronics <span className="text-green-400">Rs. 200/kg</span> • Copper <span className="text-green-400">Rs. 1800/kg</span> •
-                    NewsPaper <span className="text-green-400">Rs. 80/kg</span> • Plastic <span className="text-green-400">Rs. 40/kg</span> • Iron <span className="text-green-400">Rs. 110/kg</span>
+            <div className="overflow-hidden whitespace-nowrap bg-brand-dark py-3">
+                <div className="inline-block animate-marquee text-sm font-mono tracking-wider text-white">
+                    🚨 Latest scrap rates: Newspaper <span className="text-green-400">Rs. 80/kg</span> • Plastic <span className="text-green-400">Rs. 40/kg</span> • Iron <span className="text-green-400">Rs. 110/kg</span> • Electronics <span className="text-green-400">Rs. 200/kg</span> • Copper <span className="text-green-400">Rs. 1800/kg</span> •
+                    Newspaper <span className="text-green-400">Rs. 80/kg</span> • Plastic <span className="text-green-400">Rs. 40/kg</span> • Iron <span className="text-green-400">Rs. 110/kg</span>
                 </div>
             </div>
         </React.Fragment>
