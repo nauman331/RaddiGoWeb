@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo2 from '../../assets/logo2.jpeg'
 import gpBadge from '../../assets/google-play-badge.svg'
 import appBadge from '../../assets/app-store-badge.svg'
 
+// All items are kept and always rendered in the DOM (never conditionally
+// mounted) so crawlers index every internal link regardless of hover/open
+// state — only visibility/animation is toggled with CSS.
 const desktopMenus = [
     {
         id: 'services',
@@ -14,8 +17,8 @@ const desktopMenus = [
             { label: 'Lahore pickup', to: '/lahore-pickup', description: 'Doorstep pickup in Lahore' },
             { label: 'Business pickup', to: '/business-pickup', description: 'Support for shops and offices' },
             { label: 'Sell scrap', to: '/sell-scrap', description: 'Easy scrap selling in one click' },
-            { label: 'Pricing', to: '/pricing', description: 'Simple rates and service options' }
-        ]
+            { label: 'Pricing', to: '/pricing', description: 'Simple rates and service options' },
+        ],
     },
     {
         id: 'solutions',
@@ -24,8 +27,8 @@ const desktopMenus = [
             { label: 'For homes', to: '/sell-scrap', description: 'Household junk and scrap clearout' },
             { label: 'For shops', to: '/business-pickup', description: 'Recurring pickups for stores' },
             { label: 'For offices', to: '/business-pickup', description: 'Bulk waste and office clearout' },
-            { label: 'For partners', to: '/get-started', description: 'Join the captain network' }
-        ]
+            { label: 'For partners', to: '/get-started', description: 'Join the captain network' },
+        ],
     },
     {
         id: 'learn',
@@ -35,8 +38,8 @@ const desktopMenus = [
             { label: 'FAQ', to: '/faq', description: 'Answers to common questions' },
             { label: 'About', to: '/about', description: 'Our mission and story' },
             { label: 'Coverage', to: '/coverage', description: 'Cities and service zones' },
-            { label: 'Recycling guide', to: '/recycling-guide', description: 'How to sort scrap properly' }
-        ]
+            { label: 'Recycling guide', to: '/recycling-guide', description: 'How to sort scrap properly' },
+        ],
     },
     {
         id: 'company',
@@ -44,134 +47,318 @@ const desktopMenus = [
         items: [
             { label: 'Contact', to: '/contact', description: 'Reach our team' },
             { label: 'Terms', to: '/terms', description: 'Service terms and conditions' },
-            { label: 'Privacy', to: '/privacy', description: 'Data and privacy policy' }
-        ]
-    }
+            { label: 'Privacy', to: '/privacy', description: 'Data and privacy policy' },
+        ],
+    },
 ]
 
-const Navbar: React.FC = () => {
-    const [open, setOpen] = useState(false)
-    const [activeMenu, setActiveMenu] = useState<string | null>(null)
-    const [mobileSections, setMobileSections] = useState<Record<string, boolean>>({})
+const copy = {
+    en: {
+        sell: 'Sell scrap',
+        partner: 'Become a Collector',
+        getApp: 'Get the app',
+        langToggle: 'اردو',
+    },
+    ur: {
+        sell: 'ردی بیچیں',
+        partner: 'کلیکٹر بنیں',
+        getApp: 'ایپ حاصل کریں',
+        langToggle: 'English',
+    },
+}
 
-    const toggleMobileSection = (id: string) => {
-        setMobileSections((prev) => ({ ...prev, [id]: !prev[id] }))
+const Navbar: React.FC = () => {
+    const [scrolled, setScrolled] = useState(false)
+    const [drawerOpen, setDrawerOpen] = useState(false)
+    const [appMenuOpen, setAppMenuOpen] = useState(false)
+    const [activeMenu, setActiveMenu] = useState<string | null>(null)
+    const [openSections, setOpenSections] = useState<Record<string, boolean>>({})
+    const [lang, setLang] = useState<'en' | 'ur'>('en')
+    const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+    const t = copy[lang]
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 8)
+        onScroll()
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
+
+    useEffect(() => {
+        document.body.style.overflow = drawerOpen ? 'hidden' : ''
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [drawerOpen])
+
+    // Small delay before closing a dropdown so moving the mouse from the
+    // trigger into the panel doesn't feel twitchy.
+    const openMenu = (id: string) => {
+        if (closeTimer.current) clearTimeout(closeTimer.current)
+        setActiveMenu(id)
+    }
+    const scheduleClose = () => {
+        closeTimer.current = setTimeout(() => setActiveMenu(null), 120)
+    }
+
+    const toggleSection = (id: string) => {
+        setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }))
     }
 
     return (
-        <nav className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-                <NavLink to="/" className="flex items-center gap-2">
-                    <img src={logo2} alt="RaddiGo Logo" className="h-12 w-12 rounded-full object-cover" />
-                    <span className="text-2xl font-heading font-bold tracking-tight text-brand-dark">RaddiGo</span>
-                </NavLink>
+        <>
+            <nav
+                className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-md transition-all duration-300 ${
+                    scrolled ? 'border-slate-200 shadow-[0_4px_24px_rgba(11,61,46,0.08)]' : 'border-transparent'
+                }`}
+            >
+                <div
+                    className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-300 ${
+                        scrolled ? 'py-3' : 'py-4'
+                    }`}
+                >
+                    {/* Logo */}
+                    <NavLink to="/" className="flex shrink-0 items-center gap-2">
+                        <img src={logo2} alt="RaddiGo Logo" className="h-10 w-10 rounded-full object-cover" />
+                        <span className="font-heading text-xl font-bold tracking-tight text-brand-dark">RaddiGo</span>
+                    </NavLink>
 
-                <div className="hidden items-center gap-1 text-sm font-semibold text-slate-600 md:flex">
-                    {desktopMenus.map((menu) => (
-                        <div
-                            key={menu.id}
-                            className="relative py-3"
-                            onMouseEnter={() => setActiveMenu(menu.id)}
-                            onMouseLeave={() => setActiveMenu(null)}
-                        >
-                            <button className="rounded-full px-4 py-2 transition hover:bg-slate-100 hover:text-brand-green">
-                                {menu.label}
-                            </button>
-                            {activeMenu === menu.id && (
-                                <div className="absolute left-0 top-full pt-2">
+                    {/* Desktop nav — grouped dropdowns, all links always in the DOM */}
+                    <div className="hidden items-center gap-1 lg:flex">
+                        {desktopMenus.map((menu) => (
+                            <div
+                                key={menu.id}
+                                className="relative"
+                                onMouseEnter={() => openMenu(menu.id)}
+                                onMouseLeave={scheduleClose}
+                            >
+                                <button
+                                    className={`flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-medium transition-colors ${
+                                        activeMenu === menu.id ? 'text-brand-green' : 'text-slate-600 hover:text-brand-dark'
+                                    }`}
+                                    aria-expanded={activeMenu === menu.id}
+                                >
+                                    {menu.label}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                                            activeMenu === menu.id ? 'rotate-180' : ''
+                                        }`}
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+
+                                {/* Always mounted; only opacity/transform/pointer-events change */}
+                                <div
+                                    className={`absolute left-0 top-full pt-2 transition-all duration-200 ${
+                                        activeMenu === menu.id
+                                            ? 'pointer-events-auto translate-y-0 opacity-100'
+                                            : 'pointer-events-none -translate-y-1 opacity-0'
+                                    }`}
+                                >
                                     <div className="w-80 rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_20px_60px_rgba(11,61,46,0.16)]">
-                                        <div className="grid gap-2">
+                                        <div className="grid gap-1">
                                             {menu.items.map((item) => (
                                                 <NavLink
-                                                    key={item.to}
+                                                    key={item.to + item.label}
                                                     to={item.to}
-                                                    className="block rounded-xl px-3 py-3 transition hover:bg-brand-light"
+                                                    className="block rounded-xl px-3 py-2.5 transition hover:bg-brand-light"
                                                 >
-                                                    <div className="font-semibold text-brand-dark">{item.label}</div>
-                                                    <div className="mt-1 text-sm text-slate-500">{item.description}</div>
+                                                    <div className="text-sm font-semibold text-brand-dark">{item.label}</div>
+                                                    <div className="mt-0.5 text-xs text-slate-500">{item.description}</div>
                                                 </NavLink>
                                             ))}
                                         </div>
                                     </div>
                                 </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-
-                <div className="flex items-center gap-3">
-                    <div className="hidden items-center gap-2 sm:flex">
-                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="px-1 py-0">
-                            <img src={gpBadge} alt="Get it on Google Play" className="h-7 object-contain" />
-                        </a>
-                        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" className="px-1 py-0">
-                            <img src={appBadge} alt="Download on the App Store" className="h-7 object-contain" />
-                        </a>
+                            </div>
+                        ))}
                     </div>
-                    <NavLink to="/get-started" className="hidden rounded-full bg-brand-dark px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 md:inline-block">
-                        Become a partner
-                    </NavLink>
 
-                    <button
-                        aria-label="Toggle menu"
-                        aria-expanded={open}
-                        onClick={() => setOpen(!open)}
-                        className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 md:hidden"
-                    >
-                        {open ? (
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        ) : (
+                    {/* Right cluster */}
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={() => setLang(lang === 'en' ? 'ur' : 'en')}
+                            className="hidden rounded-full px-3 py-2 text-sm font-semibold text-slate-500 transition hover:bg-slate-100 hover:text-brand-dark sm:inline-block"
+                        >
+                            {t.langToggle}
+                        </button>
+
+                        <NavLink
+                            to="/sell-scrap"
+                            className="hidden rounded-full bg-brand-green px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 md:inline-block"
+                        >
+                            {t.sell}
+                        </NavLink>
+                        <NavLink
+                            to="/get-started"
+                            className="hidden rounded-full border border-brand-dark px-4 py-2 text-sm font-semibold text-brand-dark transition hover:bg-brand-dark hover:text-white lg:inline-block"
+                        >
+                            {t.partner}
+                        </NavLink>
+
+                        <div
+                            className="relative hidden sm:block"
+                            onMouseEnter={() => setAppMenuOpen(true)}
+                            onMouseLeave={() => setAppMenuOpen(false)}
+                        >
+                            <button
+                                onClick={() => setAppMenuOpen((v) => !v)}
+                                className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-brand-dark"
+                                aria-label={t.getApp}
+                                aria-expanded={appMenuOpen}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M7 4h10a1 1 0 011 1v14a1 1 0 01-1 1H7a1 1 0 01-1-1V5a1 1 0 011-1z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11 18h2" />
+                                </svg>
+                            </button>
+                            <div
+                                className={`absolute right-0 top-full pt-2 transition-all duration-200 ${
+                                    appMenuOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-1 opacity-0'
+                                }`}
+                            >
+                                <div className="w-56 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_20px_60px_rgba(11,61,46,0.16)]">
+                                    <p className="mb-3 text-sm font-semibold text-brand-dark">{t.getApp}</p>
+                                    <div className="flex flex-col gap-2">
+                                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                                            <img src={gpBadge} alt="Get it on Google Play" className="h-9 w-full object-contain" />
+                                        </a>
+                                        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                                            <img src={appBadge} alt="Download on the App Store" className="h-9 w-full object-contain" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            aria-label="Open menu"
+                            aria-expanded={drawerOpen}
+                            onClick={() => setDrawerOpen(true)}
+                            className="inline-flex items-center justify-center rounded-full p-2 text-slate-700 hover:bg-slate-100 lg:hidden"
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
-                        )}
-                    </button>
-                </div>
-            </div>
-
-            {open && (
-                <div className="border-t border-slate-100 bg-white md:hidden">
-                    <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-4">
-                        {desktopMenus.map((menu) => (
-                            <div key={menu.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-3">
-                                <button
-                                    onClick={() => toggleMobileSection(menu.id)}
-                                    className="flex w-full items-center justify-between rounded-xl px-2 py-2 text-left font-semibold text-brand-dark"
-                                >
-                                    <span>{menu.label}</span>
-                                    <span className="text-lg">{mobileSections[menu.id] ? '−' : '+'}</span>
-                                </button>
-                                {mobileSections[menu.id] && (
-                                    <div className="mt-2 space-y-2 px-2 pb-1">
-                                        {menu.items.map((item) => (
-                                            <NavLink
-                                                key={item.to}
-                                                to={item.to}
-                                                onClick={() => setOpen(false)}
-                                                className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-brand-green"
-                                            >
-                                                {item.label}
-                                            </NavLink>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-                        <NavLink to="/get-started" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-brand-dark px-4 py-2 text-center text-sm font-semibold text-white">Become a partner</NavLink>
-                        <div className="flex items-center gap-3 pt-2">
-                            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-                                <img src={gpBadge} alt="Get it on Google Play" className="h-9 object-contain" />
-                            </a>
-                            <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                                <img src={appBadge} alt="Download on the App Store" className="h-9 object-contain" />
-                            </a>
-                        </div>
+                        </button>
                     </div>
                 </div>
-            )}
-        </nav>
+            </nav>
+
+            {/* Mobile drawer — every section and link stays in the DOM;
+                collapsed groups use max-height/opacity, not unmounting. */}
+            <div
+                className={`fixed inset-0 z-[60] transition-opacity duration-300 lg:hidden ${
+                    drawerOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+                }`}
+            >
+                <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setDrawerOpen(false)} />
+                <div
+                    className={`absolute right-0 top-0 flex h-full w-[85%] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ease-out ${
+                        drawerOpen ? 'translate-x-0' : 'translate-x-full'
+                    }`}
+                >
+                    <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
+                        <NavLink to="/" onClick={() => setDrawerOpen(false)} className="flex items-center gap-2">
+                            <img src={logo2} alt="RaddiGo Logo" className="h-9 w-9 rounded-full object-cover" />
+                            <span className="font-heading text-lg font-bold text-brand-dark">RaddiGo</span>
+                        </NavLink>
+                        <button
+                            aria-label="Close menu"
+                            onClick={() => setDrawerOpen(false)}
+                            className="rounded-full p-2 text-slate-500 hover:bg-slate-100"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div className="flex gap-2 px-5 pt-4">
+                        <NavLink
+                            to="/sell-scrap"
+                            onClick={() => setDrawerOpen(false)}
+                            className="flex-1 rounded-full bg-brand-green px-4 py-2.5 text-center text-sm font-semibold text-white"
+                        >
+                            {t.sell}
+                        </NavLink>
+                        <NavLink
+                            to="/get-started"
+                            onClick={() => setDrawerOpen(false)}
+                            className="flex-1 rounded-full border border-brand-dark px-4 py-2.5 text-center text-sm font-semibold text-brand-dark"
+                        >
+                            {t.partner}
+                        </NavLink>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto px-5 py-4">
+                        {desktopMenus.map((menu) => {
+                            const isOpen = !!openSections[menu.id]
+                            return (
+                                <div key={menu.id} className="mb-2 rounded-2xl border border-slate-100 bg-slate-50/60">
+                                    <button
+                                        onClick={() => toggleSection(menu.id)}
+                                        className="flex w-full items-center justify-between px-4 py-3 text-left text-[15px] font-semibold text-brand-dark"
+                                        aria-expanded={isOpen}
+                                    >
+                                        <span>{menu.label}</span>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    {/* Kept mounted at all times; only height/opacity animate */}
+                                    <div
+                                        className={`grid overflow-hidden px-4 transition-all duration-300 ${
+                                            isOpen ? 'grid-rows-[1fr] pb-3 opacity-100' : 'grid-rows-[0fr] opacity-0'
+                                        }`}
+                                    >
+                                        <div className="min-h-0 space-y-1">
+                                            {menu.items.map((item) => (
+                                                <NavLink
+                                                    key={item.to + item.label}
+                                                    to={item.to}
+                                                    onClick={() => setDrawerOpen(false)}
+                                                    className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-white hover:text-brand-green"
+                                                >
+                                                    {item.label}
+                                                </NavLink>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+
+                        <button
+                            onClick={() => setLang(lang === 'en' ? 'ur' : 'en')}
+                            className="mt-2 rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-600"
+                        >
+                            {t.langToggle}
+                        </button>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-3 border-t border-slate-100 px-5 py-4">
+                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                            <img src={gpBadge} alt="Get it on Google Play" className="h-9 object-contain" />
+                        </a>
+                        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                            <img src={appBadge} alt="Download on the App Store" className="h-9 object-contain" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 
