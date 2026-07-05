@@ -9,13 +9,13 @@ const Navbar: React.FC = () => {
 
     return (
         <nav className="relative flex items-center justify-between px-6 py-4 mx-auto bg-white z-20">
-            <div className="flex items-center gap-2">
+            <NavLink to="/" className="flex items-center gap-2">
                 <img src={logo2} alt="RaddiGo Logo" className="w-12 h-12 rounded-full object-cover" />
                 <span className="text-2xl font-heading font-bold text-brand-dark tracking-tight">RaddiGo</span>
-            </div>
+            </NavLink>
             <div className="hidden md:flex gap-6 text-sm font-semibold text-slate-600">
-                <NavLink to="/how-it-works" className="hover:text-brand-green">How it Works</NavLink>
-                <NavLink to="/live-rates" className="hover:text-brand-green">Live Rates</NavLink>
+                <NavLink to="/how-it-works" className="hover:text-brand-green">Kaise Kaam Karta Hai</NavLink>
+                <NavLink to="/live-rates" className="hover:text-brand-green">Aaj Ki Rates</NavLink>
                 <NavLink to="/safety" className="hover:text-brand-green">Safety</NavLink>
             </div>
             <div className="flex items-center gap-3">
@@ -27,9 +27,9 @@ const Navbar: React.FC = () => {
                         <img src={appBadge} alt="Download on the App Store" className="h-7 object-contain" />
                     </a>
                 </div>
-                <button className="hidden md:inline-block bg-brand-dark text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition">
-                    Partner Banain (Driver)
-                </button>
+                <NavLink to="/get-started" className="hidden md:inline-block bg-brand-dark text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition">
+                    Driver Banain
+                </NavLink>
 
                 <button
                     aria-label="Toggle menu"
@@ -52,9 +52,10 @@ const Navbar: React.FC = () => {
             {open && (
                 <div className="md:hidden absolute left-0 right-0 top-full bg-white shadow-md border-t border-slate-100 z-50 w-full">
                     <div className="px-4 py-4 flex flex-col gap-3">
-                        <NavLink to="/how-it-works" onClick={() => setOpen(false)} className="py-2">How it Works</NavLink>
-                        <NavLink to="/live-rates" onClick={() => setOpen(false)} className="py-2">Live Rates</NavLink>
+                        <NavLink to="/how-it-works" onClick={() => setOpen(false)} className="py-2">Kaise Kaam Karta Hai</NavLink>
+                        <NavLink to="/live-rates" onClick={() => setOpen(false)} className="py-2">Aaj Ki Rates</NavLink>
                         <NavLink to="/safety" onClick={() => setOpen(false)} className="py-2">Safety</NavLink>
+                        <NavLink to="/get-started" onClick={() => setOpen(false)} className="bg-brand-dark text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition mt-2 text-center">Driver Banain</NavLink>
                         <div className="flex gap-3 items-center pt-2">
                             <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                                 <img src={gpBadge} alt="Get it on Google Play" className="h-9 object-contain" />
@@ -63,7 +64,6 @@ const Navbar: React.FC = () => {
                                 <img src={appBadge} alt="Download on the App Store" className="h-9 object-contain" />
                             </a>
                         </div>
-                        <button className="bg-brand-dark text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-800 transition mt-2">Partner Banain (Driver)</button>
                     </div>
                 </div>
             )}

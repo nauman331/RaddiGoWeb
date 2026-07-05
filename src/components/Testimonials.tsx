@@ -4,14 +4,14 @@ import p2 from '../assets/rikshaw.jpeg'
 
 const Testimonials: React.FC = () => {
     const items = [
-        { name: 'Ayesha K.', text: 'Super reliable pickup service — scheduled in minutes.', img: p1 },
-        { name: 'Bilal R.', text: 'Easy app, friendly captains and fast collection.', img: p2 },
+        { name: 'Ayesha K.', text: 'Bahut hi asaan tha. Pickup aaya aur cash bhi fauran mil gaya.', img: p1 },
+        { name: 'Bilal R.', text: 'Captain bohat acha tha aur rate bhi theek tha. Dobara use karunga.', img: p2 },
     ]
 
     return (
         <section className="bg-slate-50 py-12">
             <div className="max-w-4xl mx-auto px-4">
-                <h2 className="text-2xl font-semibold text-center mb-8">What our customers say</h2>
+                <h2 className="text-2xl font-semibold text-center mb-8">Hamare customers kya kehte hain</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {items.map((t, i) => (
                         <div key={i} className="flex gap-4 items-center bg-white p-4 rounded-lg shadow-sm">
