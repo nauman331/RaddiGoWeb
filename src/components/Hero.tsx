@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Heroimg from '../assets/hero.jpeg'
+import Heroimg from '../assets/raddi.jpeg'
 
 const rates = [
     { label: 'Newspaper', value: 'Rs. 80/kg' },
