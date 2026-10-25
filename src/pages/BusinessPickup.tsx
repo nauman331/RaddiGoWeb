@@ -4,38 +4,55 @@ import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
 const BusinessPickup: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-white text-slate-800">
-      <Navbar />
-      <main className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-semibold uppercase tracking-[0.2em] text-brand-green">Business scrap pickup</p>
-          <h1 className="mt-3 font-heading text-4xl font-bold text-brand-dark">Shops, warehouses aur offices ke liye reliable scrap collection service</h1>
-          <p className="mt-4 text-lg text-slate-600">Agar aap business mein scrap, cardboard, metal ya electronic waste manage karte hain, toh RaddiGo aap ko scheduled pickup aur transparent payout ka solution de sakta hai.</p>
-        </div>
+    return (
+        <div className="bg-white font-sans text-slate-800 antialiased">
+            <Navbar />
+            <main className="mx-auto max-w-4xl px-6 py-16">
+                <h1 className="text-3xl font-heading font-bold text-brand-dark">Dukano aur offices ke liye bulk sorting aur rates</h1>
+                <p className="mt-4 text-lg text-slate-600">
+                    Dukano, godamo aur offices mein raddi aksar zyada miqdar mein nikalti hai — dabbe, kagaz, plastic
+                    aur kabhi kabhi loha ya electronics. Is page par bulk material ko sort karne aur rates samajhne ki
+                    rehnumai hai. Yeh website pickup ya scheduled service nahi deti; yeh maloomat sirf rehnumai ke liye hai.
+                </p>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
-            <h2 className="text-2xl font-bold text-brand-dark">Business ke liye kya fayda hai?</h2>
-            <ul className="mt-6 space-y-3 text-slate-600">
-              <li>• Regular scrap pickup schedule</li>
-              <li>• Cleaner workspace aur less clutter</li>
-              <li>• Better value for recyclable material</li>
-              <li>• Simple record for waste disposal</li>
-            </ul>
-          </div>
-          <div className="rounded-3xl bg-brand-light p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-brand-dark">Hum kis tarah kaam karte hain</h2>
-            <p className="mt-3 text-slate-600">Aap booking karte hain, hum pickup slot confirm karte hain, aur material ka weight aur rate clear karke collection karte hain.</p>
-            <div className="mt-6">
-              <NavLink to="/get-started" className="inline-block rounded-full bg-brand-green px-5 py-3 font-semibold text-white">Become a partner</NavLink>
-            </div>
-          </div>
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Bulk sorting ka tareeqa</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>Cardboard ko chapta karke aur sookha rakh kar alag dher lagayein.</li>
+                    <li>Kagaz ko geele ya gande waste se door rakhein.</li>
+                    <li>Plastic ko type ke hisab se alag karein jahan mumkin ho.</li>
+                    <li>Loha aur electronics ko aam waste se bilkul alag rakhein.</li>
+                    <li>Har material ka wazan alag alag karwayein, taake rate saaf ho.</li>
+                </ul>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Rates jo is site par shaya hain</h2>
+                <p className="mt-3 text-slate-600">
+                    Akhbar Rs. 80/kg, Plastic Rs. 40/kg, Loha Rs. 110/kg, Electronics Rs. 200/kg, Tamba Rs. 1800/kg,
+                    Cardboard Rs. 30/kg. Yeh rates indicative hain — buyer se bechne se pehle rate aur wazan confirm
+                    karein, aur kul raqam khud hisab karein.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Bari miqdar bechne se pehle</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>Ek se zyada buyers se rate poochein aur compare karein.</li>
+                    <li>Payment ki shartein pehle se tay karein — kab, kis tareeqe se, aur kis hisab se.</li>
+                    <li>Bhari loha uthate waqt safety ka khayal rakhein: dastane pehnein aur madad lein.</li>
+                </ul>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                    <NavLink
+                        to="/live-rates"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        Live rates dekhein
+                    </NavLink>
+                    <NavLink to="/safety" className="inline-block px-6 py-3 font-semibold text-brand-dark hover:text-brand-green">
+                        Safety tips →
+                    </NavLink>
+                </div>
+            </main>
+            <Footer />
         </div>
-      </main>
-      <Footer />
-    </div>
-  )
+    )
 }
 
 export default BusinessPickup

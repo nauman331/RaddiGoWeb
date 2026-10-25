@@ -4,63 +4,71 @@ import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
 const steps = [
-  {
-    title: '1. Book your pickup',
-    text: 'Tell us what kind of scrap you have, the quantity, and your area in Lahore. Our booking flow is simple enough for households, shops, and offices to use in under a minute.'
-  },
-  {
-    title: '2. Get a verified pickup',
-    text: 'A trained captain arrives on time, checks the material, and confirms the weight and price before collection. This makes the process transparent and stress-free.'
-  },
-  {
-    title: '3. Receive cash instantly',
-    text: 'Once the scrap is weighed and verified, you get paid immediately through cash, JazzCash, or EasyPaisa. There is no waiting around or confusing paperwork.'
-  }
+    {
+        title: '1. Check the rate first',
+        text: 'Look up the per-kg rate for your material on the live rates page, so you know roughly what it is worth before you talk to any buyer.',
+    },
+    {
+        title: '2. Sort and weigh honestly',
+        text: 'Keep paper dry, separate plastic by type, and keep metal apart from other waste. Scrap is usually weighed, and clean, separated material is easier to value fairly.',
+    },
+    {
+        title: '3. Compare offers, then sell',
+        text: 'Rates change with the market, quality, and quantity. Compare more than one offer, confirm the rate and the weight, and only then agree to sell.',
+    },
 ]
 
 const HowItWorks: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-white text-slate-800">
-      <Navbar />
-      <main className="max-w-6xl mx-auto px-6 py-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <p className="text-brand-green font-semibold uppercase tracking-[0.2em]">How RaddiGo works</p>
-          <h1 className="text-4xl font-heading font-bold text-brand-dark mt-3">The easiest way to sell scrap online in Lahore</h1>
-          <p className="mt-4 text-lg text-slate-600">RaddiGo is built for people who want a clean, digital, and reliable scrap collection experience. Instead of calling around or waiting for a random collector, you can schedule a pickup, get a fair price, and receive cash on the spot.</p>
-        </div>
+    return (
+        <div className="bg-white font-sans text-slate-800 antialiased">
+            <Navbar />
+            <main className="mx-auto max-w-4xl px-6 py-16">
+                <h1 className="text-3xl font-heading font-bold text-brand-dark">How selling scrap works</h1>
+                <p className="mt-4 text-lg text-slate-600">
+                    This page explains the general process of selling scrap in Lahore. RaddiGo does not offer pickup
+                    booking or payments — this site publishes rates and guides so you can sell with a clear picture of
+                    what your scrap is worth.
+                </p>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
-          {steps.map((step) => (
-            <div key={step.title} className="bg-brand-light rounded-2xl p-8 shadow-sm border border-slate-100">
-              <h2 className="text-xl font-bold text-brand-dark">{step.title}</h2>
-              <p className="mt-3 text-slate-600">{step.text}</p>
-            </div>
-          ))}
-        </div>
+                <div className="mt-10 space-y-6">
+                    {steps.map((step) => (
+                        <div key={step.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                            <h2 className="text-xl font-bold text-brand-dark">{step.title}</h2>
+                            <p className="mt-2 text-slate-600">{step.text}</p>
+                        </div>
+                    ))}
+                </div>
 
-        <div className="mt-14 grid lg:grid-cols-2 gap-8 items-start">
-          <div className="rounded-3xl bg-slate-900 p-10 text-white">
-            <h2 className="text-2xl font-bold">What can you sell with RaddiGo?</h2>
-            <p className="mt-3 text-slate-300">We collect newspapers, old books, cardboard, plastic, iron, copper, and other recyclable materials. This makes RaddiGo suitable for home cleanup, office clearance, and commercial scrap disposal.</p>
-            <div className="mt-6">
-              <NavLink to="/live-rates" className="inline-block rounded-full bg-brand-green px-5 py-3 font-semibold text-white">See current scrap rates</NavLink>
-            </div>
-          </div>
+                <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
+                    <h2 className="text-xl font-bold text-brand-dark">Before you accept an offer</h2>
+                    <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                        <li>Ask which rate applies to each material separately — mixed scrap is often valued lower.</li>
+                        <li>Check the weight and the rate together, and work out the total yourself before agreeing.</li>
+                        <li>Keep batteries and electronics separate from general scrap, and handle broken glass and sharp metal with care.</li>
+                        <li>Payment terms are between you and your buyer; confirm them before handing over the material.</li>
+                    </ul>
+                </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
-            <h2 className="text-2xl font-bold text-brand-dark">Why this matters</h2>
-            <p className="mt-3 text-slate-600">A proper scrap pickup service helps you save time, earn money from unused material, and support recycling in Pakistan. RaddiGo brings that experience online so it feels simple from start to finish.</p>
-            <ul className="mt-6 space-y-3 text-slate-600">
-              <li>• Transparent pricing for every scrape item</li>
-              <li>• Better value than informal collectors</li>
-              <li>• A cleaner and safer pickup process</li>
-            </ul>
-          </div>
+                <div className="mt-10 flex flex-wrap gap-4">
+                    <NavLink
+                        to="/live-rates"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        See current scrap rates
+                    </NavLink>
+                    <NavLink to="/recycling-guide" className="inline-block px-6 py-3 font-semibold text-brand-dark hover:text-brand-green">
+                        How to sort scrap →
+                    </NavLink>
+                </div>
+
+                <p className="mt-8 text-sm text-slate-500">
+                    Rates shown on this site are indicative and change with the market. Always confirm the rate with your
+                    buyer before selling.
+                </p>
+            </main>
+            <Footer />
         </div>
-      </main>
-      <Footer />
-    </div>
-  )
+    )
 }
 
 export default HowItWorks

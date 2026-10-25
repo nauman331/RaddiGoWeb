@@ -3,43 +3,60 @@ import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
+const materials = [
+    { name: 'Akhbar', rate: 'Rs. 80/kg', tip: 'Sookha aur bandha hua rakhein; geela kagaz ki qeemat kam hoti hai.' },
+    { name: 'Plastic', rate: 'Rs. 40/kg', tip: 'Type ke hisab se alag karein aur saaf, sookha rakhein.' },
+    { name: 'Loha', rate: 'Rs. 110/kg', tip: 'Dusre waste se alag rakhein; zang aur mili hui cheezein offer kam kar sakti hain.' },
+    { name: 'Electronics', rate: 'Rs. 200/kg', tip: 'Battery aur tooti screen ko aam scrap se alag rakhein.' },
+    { name: 'Tamba', rate: 'Rs. 1800/kg', tip: 'Sab se zyada qeemti aam material; rate aur wazan achhi tarah confirm karein.' },
+    { name: 'Cardboard', rate: 'Rs. 30/kg', tip: 'Dabbe chapte karke aur sookha rakh kar dein.' },
+]
+
 const LahorePickup: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-white text-slate-800">
-      <Navbar />
-      <main className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-semibold uppercase tracking-[0.2em] text-brand-green">Lahore mein scrap pickup</p>
-          <h1 className="mt-3 font-heading text-4xl font-bold text-brand-dark">Lahore mein ghar, office aur shop ka scrap pickup ab bohat asaan hai</h1>
-          <p className="mt-4 text-lg text-slate-600">Agar aap Lahore mein scrap sell karna chahte hain, toh RaddiGo aap ke liye aasan booking, transparent price aur fast pickup ka solution la raha hai.</p>
-        </div>
+    return (
+        <div className="bg-white font-sans text-slate-800 antialiased">
+            <Navbar />
+            <main className="mx-auto max-w-4xl px-6 py-16">
+                <h1 className="text-3xl font-heading font-bold text-brand-dark">Lahore scrap rates aur materials</h1>
+                <p className="mt-4 text-lg text-slate-600">
+                    Lahore mein raddi bechne se pehle rate aur sorting jaan lena behtar hai. Is page par Lahore ke liye
+                    shaya kiye gaye per-kg rates aur har material ki sorting ki bunyadi rehnumai hai. Yeh website pickup
+                    booking nahi karti — yeh maloomat sirf aap ki rehnumai ke liye hai.
+                </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 bg-brand-light p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-brand-dark">Fast pickup</h2>
-            <p className="mt-3 text-slate-600">Booking ke baad hum apki location ke hisaab se pickup schedule karte hain.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-brand-light p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-brand-dark">Fair pricing</h2>
-            <p className="mt-3 text-slate-600">Material ki quality aur weight ke mutabiq clear pricing di jati hai.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-brand-light p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-brand-dark">Instant payout</h2>
-            <p className="mt-3 text-slate-600">Pickup ke baad cash ya digital payment ke zariye payment ka option available hai.</p>
-          </div>
-        </div>
+                <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                    {materials.map((m) => (
+                        <div key={m.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                            <h2 className="text-xl font-bold text-brand-dark">{m.name}</h2>
+                            <p className="mt-1 font-semibold text-brand-green">{m.rate}</p>
+                            <p className="mt-2 text-slate-600">{m.tip}</p>
+                        </div>
+                    ))}
+                </div>
 
-        <div className="mt-14 rounded-3xl bg-brand-dark p-8 text-white">
-          <h2 className="text-2xl font-bold">Lahore ke liye best scrap pickup service kyun?</h2>
-          <p className="mt-3 max-w-3xl text-slate-300">Humare paas local understanding, transparent process aur digital booking experience hota hai jis se aap ko har bar clear experience milta hai.</p>
-          <div className="mt-6">
-            <NavLink to="/live-rates" className="inline-block rounded-full bg-brand-green px-5 py-3 font-semibold text-white">Check live scrap rates</NavLink>
-          </div>
+                <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+                    <h2 className="text-xl font-bold text-brand-dark">Zaroori baat</h2>
+                    <p className="mt-2 text-slate-700">
+                        Yeh rates indicative hain aur market ke sath badalte hain. Kisi bhi buyer se bechne se pehle rate,
+                        wazan aur material ki type confirm karein, aur kul raqam khud hisab karke dekhein.
+                    </p>
+                </div>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                    <NavLink
+                        to="/live-rates"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        Tamam live rates dekhein
+                    </NavLink>
+                    <NavLink to="/recycling-guide" className="inline-block px-6 py-3 font-semibold text-brand-dark hover:text-brand-green">
+                        Sorting guide →
+                    </NavLink>
+                </div>
+            </main>
+            <Footer />
         </div>
-      </main>
-      <Footer />
-    </div>
-  )
+    )
 }
 
 export default LahorePickup
