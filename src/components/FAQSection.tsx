@@ -1,18 +1,36 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const faqs = [
     {
-        question: 'What kinds of scrap can I book for pickup?',
+        question: 'What kinds of scrap does this site cover?',
         answer:
-            'You can book pickups for paper, books, plastic, iron, copper, electronics, and other recyclable materials depending on your area.',
+            'Newspapers, books, cardboard, plastic, iron, copper, and electronics. The live rates page lists the per-kg rate shown for each material on this site.',
     },
     {
-        question: 'How do I get paid?',
-        answer: 'Once the pickup is complete and verified, payment is made instantly through cash, JazzCash, or EasyPaisa.',
+        question: 'Are the rates on this site guaranteed prices?',
+        answer:
+            'No. The rates are indicative and change with the market, material quality, and quantity. Always confirm the rate, the weight, and the material type with your buyer before selling.',
     },
     {
-        question: 'Is the service available outside Lahore?',
-        answer: 'We are launching in Lahore first and expanding to more cities gradually as we grow the network.',
+        question: 'How should I sort scrap before selling it?',
+        answer:
+            'Keep paper and cardboard dry and clean, group plastic by type where you can, keep metal separate from other waste, and keep batteries and electronics apart from general scrap. The recycling guide explains each step.',
+    },
+    {
+        question: 'Does RaddiGo offer pickup booking on this site?',
+        answer:
+            'No. This site is informational: it publishes rates and recycling guides for Lahore scrap sellers. It does not take bookings, arrange pickups, or handle payments.',
+    },
+    {
+        question: 'Is this site only about Lahore?',
+        answer:
+            'The rates on this site focus on Lahore. Other cities are listed on the coverage page, but no separate city rates for them are published yet.',
+    },
+    {
+        question: 'Why do two buyers offer different rates for the same scrap?',
+        answer:
+            'Because the rate depends on the material, its condition, its weight, and market demand on the day. Clean, dry, sorted material is usually easier to value than mixed or wet material.',
     },
 ]
 
@@ -21,7 +39,6 @@ const FAQSection: React.FC = () => {
 
     return (
         <section className="bg-slate-50 px-6 py-20" aria-labelledby="faq-heading">
-            {/* FAQPage schema makes these eligible for expandable rich results in Google Search */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -40,7 +57,7 @@ const FAQSection: React.FC = () => {
                 <div className="mx-auto max-w-3xl text-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">FAQ</p>
                     <h2 id="faq-heading" className="mt-3 text-3xl font-heading font-bold text-brand-dark">
-                        Everything you need to know before joining
+                        Everything you need to know about scrap rates
                     </h2>
                 </div>
 
@@ -87,6 +104,15 @@ const FAQSection: React.FC = () => {
                             </div>
                         )
                     })}
+                </div>
+
+                <div className="mt-10 text-center">
+                    <NavLink
+                        to="/faq"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        More questions →
+                    </NavLink>
                 </div>
             </div>
         </section>

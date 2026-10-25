@@ -12,28 +12,28 @@ const Engineering: React.FC = () => {
 
             <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
-                    <p className="mb-2 font-bold uppercase tracking-[0.2em] text-brand-green">Why RaddiGo feels different</p>
+                    <p className="mb-2 font-bold uppercase tracking-[0.2em] text-brand-green">Why rates differ</p>
                     <h2 id="engineering-heading" className="mb-6 text-3xl font-heading font-bold lg:text-4xl">
-                        Built for real users who want speed, trust, and fair value
+                        Fair value starts with clear rates and clean sorting
                     </h2>
                     <p className="mb-6 text-lg text-slate-400">
-                        We are creating a modern scrap pickup platform that feels as dependable as your everyday delivery app.
-                        Customers can book, track, and get paid without the confusion of old-school collection methods.
+                        Two sellers with the same material can be offered different amounts. The difference usually comes
+                        down to the material, its condition, its weight, and the market on the day — not to a secret formula.
                     </p>
                     <div className="grid gap-4 sm:grid-cols-2">
                         <div className="rounded-2xl border border-slate-700 bg-slate-800/70 p-5">
                             <h3 className="font-semibold text-white">Transparent pricing</h3>
-                            <p className="mt-1 text-sm text-slate-400">Fair rates with clear weight and payment details.</p>
+                            <p className="mt-1 text-sm text-slate-400">Per-kg rates shown openly, with the factors that move them explained.</p>
                         </div>
                         <div className="rounded-2xl border border-slate-700 bg-slate-800/70 p-5">
-                            <h3 className="font-semibold text-white">Reliable operations</h3>
-                            <p className="mt-1 text-sm text-slate-400">Scheduled pickups and verified support for smooth service.</p>
+                            <h3 className="font-semibold text-white">Sorting matters</h3>
+                            <p className="mt-1 text-sm text-slate-400">Dry, clean, separated scrap is easier to weigh and easier to value fairly.</p>
                         </div>
                     </div>
                 </div>
                 <div className="rounded-[1.75rem] border border-slate-700 bg-slate-800 p-4 shadow-2xl">
                     <img
-                        alt="RaddiGo scrap pickup service map"
+                        alt="Map of Lahore, the city this site's rates focus on"
                         src={map}
                         loading="lazy"
                         decoding="async"

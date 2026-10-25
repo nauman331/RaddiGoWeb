@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo2 from '../../assets/logo2.jpeg'
-import gpBadge from '../../assets/google-play-badge.svg'
-import appBadge from '../../assets/app-store-badge.svg'
 
 // All items are kept and always rendered in the DOM (never conditionally
 // mounted) so crawlers index every internal link regardless of hover/open
@@ -12,11 +10,11 @@ const desktopMenus = [
         id: 'services',
         label: 'Services',
         items: [
-            { label: 'How it works', to: '/how-it-works', description: 'See the full pickup journey' },
+            { label: 'How it works', to: '/how-it-works', description: 'How selling scrap generally works' },
             { label: 'Live rates', to: '/live-rates', description: 'Check today’s scrap prices' },
-            { label: 'Lahore pickup', to: '/lahore-pickup', description: 'Doorstep pickup in Lahore' },
-            { label: 'Business pickup', to: '/business-pickup', description: 'Support for shops and offices' },
-            { label: 'Sell scrap', to: '/sell-scrap', description: 'Easy scrap selling in one click' },
+            { label: 'Lahore pickup', to: '/lahore-pickup', description: 'Lahore rates and materials' },
+            { label: 'Business pickup', to: '/business-pickup', description: 'Sorting and rates for shops and offices' },
+            { label: 'Sell scrap', to: '/sell-scrap', description: 'Materials, rates and sorting tips' },
             { label: 'Pricing', to: '/pricing', description: 'Simple rates and service options' },
         ],
     },
@@ -25,19 +23,19 @@ const desktopMenus = [
         label: 'Solutions',
         items: [
             { label: 'For homes', to: '/sell-scrap', description: 'Household junk and scrap clearout' },
-            { label: 'For shops', to: '/business-pickup', description: 'Recurring pickups for stores' },
+            { label: 'For shops', to: '/business-pickup', description: 'Sorting and rates for stores' },
             { label: 'For offices', to: '/business-pickup', description: 'Bulk waste and office clearout' },
-            { label: 'For partners', to: '/get-started', description: 'Join the captain network' },
+            { label: 'Get started', to: '/get-started', description: 'How to use this site' },
         ],
     },
     {
         id: 'learn',
         label: 'Learn',
         items: [
-            { label: 'Safety', to: '/safety', description: 'Secure pickup and handling' },
+            { label: 'Safety', to: '/safety', description: 'Safe handling tips' },
             { label: 'FAQ', to: '/faq', description: 'Answers to common questions' },
             { label: 'About', to: '/about', description: 'Our mission and story' },
-            { label: 'Coverage', to: '/coverage', description: 'Cities and service zones' },
+            { label: 'Coverage', to: '/coverage', description: 'Cities covered by this site' },
             { label: 'Recycling guide', to: '/recycling-guide', description: 'How to sort scrap properly' },
         ],
     },
@@ -46,7 +44,7 @@ const desktopMenus = [
         label: 'Company',
         items: [
             { label: 'Contact', to: '/contact', description: 'Reach our team' },
-            { label: 'Terms', to: '/terms', description: 'Service terms and conditions' },
+            { label: 'Terms', to: '/terms', description: 'Terms for this informational site' },
             { label: 'Privacy', to: '/privacy', description: 'Data and privacy policy' },
         ],
     },
@@ -55,14 +53,12 @@ const desktopMenus = [
 const copy = {
     en: {
         sell: 'Sell scrap',
-        partner: 'Become a Collector',
-        getApp: 'Get the app',
+        partner: 'Get started',
         langToggle: 'اردو',
     },
     ur: {
         sell: 'ردی بیچیں',
-        partner: 'کلیکٹر بنیں',
-        getApp: 'ایپ حاصل کریں',
+        partner: 'شروع کریں',
         langToggle: 'English',
     },
 }
@@ -70,7 +66,6 @@ const copy = {
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false)
     const [drawerOpen, setDrawerOpen] = useState(false)
-    const [appMenuOpen, setAppMenuOpen] = useState(false)
     const [activeMenu, setActiveMenu] = useState<string | null>(null)
     const [openSections, setOpenSections] = useState<Record<string, boolean>>({})
     const [lang, setLang] = useState<'en' | 'ur'>('en')
@@ -201,41 +196,6 @@ const Navbar: React.FC = () => {
                             {t.partner}
                         </NavLink>
 
-                        <div
-                            className="relative hidden sm:block"
-                            onMouseEnter={() => setAppMenuOpen(true)}
-                            onMouseLeave={() => setAppMenuOpen(false)}
-                        >
-                            <button
-                                onClick={() => setAppMenuOpen((v) => !v)}
-                                className="rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-brand-dark"
-                                aria-label={t.getApp}
-                                aria-expanded={appMenuOpen}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M7 4h10a1 1 0 011 1v14a1 1 0 01-1 1H7a1 1 0 01-1-1V5a1 1 0 011-1z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11 18h2" />
-                                </svg>
-                            </button>
-                            <div
-                                className={`absolute right-0 top-full pt-2 transition-all duration-200 ${
-                                    appMenuOpen ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-1 opacity-0'
-                                }`}
-                            >
-                                <div className="w-56 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_20px_60px_rgba(11,61,46,0.16)]">
-                                    <p className="mb-3 text-sm font-semibold text-brand-dark">{t.getApp}</p>
-                                    <div className="flex flex-col gap-2">
-                                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-                                            <img src={gpBadge} alt="Get it on Google Play" className="h-9 w-full object-contain" />
-                                        </a>
-                                        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                                            <img src={appBadge} alt="Download on the App Store" className="h-9 w-full object-contain" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <button
                             aria-label="Open menu"
                             aria-expanded={drawerOpen}
@@ -348,13 +308,8 @@ const Navbar: React.FC = () => {
                         </button>
                     </div>
 
-                    <div className="flex items-center justify-center gap-3 border-t border-slate-100 px-5 py-4">
-                        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-                            <img src={gpBadge} alt="Get it on Google Play" className="h-9 object-contain" />
-                        </a>
-                        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                            <img src={appBadge} alt="Download on the App Store" className="h-9 object-contain" />
-                        </a>
+                    <div className="border-t border-slate-100 px-5 py-4 text-center text-sm text-slate-500">
+                        Rates and recycling guides for Lahore scrap sellers.
                     </div>
                 </div>
             </div>

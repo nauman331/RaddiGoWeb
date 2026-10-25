@@ -1,29 +1,32 @@
 import React from 'react'
-import phonemap from '../assets/phonemap.jpeg'
+import { NavLink } from 'react-router-dom'
+import raddi from '../assets/raddi.jpeg'
 import digitalscale from '../assets/digitalscale.jpeg'
-import instantcash from '../assets/instantcash.jpeg'
+import trashcash from '../assets/trashcash.jpeg'
 
+// General advice for selling scrap anywhere — not a RaddiGo booking flow.
+// RaddiGo does not offer pickup booking on this site.
 const steps = [
     {
-        title: 'Book in minutes',
+        title: 'Check the rate first',
         description:
-            'Choose your area, pick a time, and send your pickup request. It is built for busy customers who want convenience without compromise.',
-        img: phonemap,
-        alt: 'Booking a scrap pickup on a phone map in Lahore',
+            'Look up the per-kg rate for your material on the live rates page, so you know roughly what your scrap is worth before you talk to any buyer.',
+        img: raddi,
+        alt: 'Mixed scrap materials sorted for recycling',
     },
     {
-        title: 'Weigh with accuracy',
+        title: 'Sort and weigh honestly',
         description:
-            'Our captains use digital scales and transparent checks so you know exactly how your material is valued at pickup time.',
+            'Keep paper dry, separate plastic by type where you can, and keep metal apart from other waste. Scrap is usually weighed, so clean, sorted material is easier to value fairly.',
         img: digitalscale,
-        alt: 'Digital weighing scale used for scrap collection',
+        alt: 'Digital weighing scale used for scrap',
     },
     {
-        title: 'Get paid instantly',
+        title: 'Compare offers, then sell',
         description:
-            'Once the pickup is complete, you receive payment right away through cash, JazzCash, or EasyPaisa for a smooth finish.',
-        img: instantcash,
-        alt: 'Instant cash payout after a scrap pickup',
+            'Rates change with the market and with quality and quantity. Compare more than one offer, confirm the rate and the weight, and only then agree to sell.',
+        img: trashcash,
+        alt: 'Cash value of sorted scrap materials',
     },
 ]
 
@@ -37,8 +40,8 @@ const Process: React.FC = () => {
                         A cleaner way to sell scrap in Lahore
                     </h2>
                     <p className="mt-3 text-lg text-slate-600">
-                        From homes and offices to shops and warehouses, RaddiGo is designed to make scrap collection feel as
-                        simple as booking a ride.
+                        From homes and offices to shops and warehouses, selling scrap goes better when you know the rate,
+                        sort your material, and compare offers first.
                     </p>
                 </div>
 
@@ -63,6 +66,15 @@ const Process: React.FC = () => {
                         </li>
                     ))}
                 </ol>
+
+                <div className="mt-10 text-center">
+                    <NavLink
+                        to="/live-rates"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        See the rates
+                    </NavLink>
+                </div>
             </div>
         </section>
     )

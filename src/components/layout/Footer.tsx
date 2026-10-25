@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import gpBadge from '../../assets/google-play-badge.svg'
-import appBadge from '../../assets/app-store-badge.svg'
 
 // Mirrors the nav's link groups 1:1 so every route linked in the header
 // is also linked in the footer — redundant internal linking is good for
@@ -70,30 +68,8 @@ const socialLinks = [
     },
 ]
 
-type Status = 'idle' | 'loading' | 'success' | 'error'
-
 const Footer: React.FC = () => {
-    const [email, setEmail] = useState('')
-    const [status, setStatus] = useState<Status>('idle')
     const year = new Date().getFullYear()
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        if (!/^\S+@\S+\.\S+$/.test(email)) {
-            setStatus('error')
-            return
-        }
-        setStatus('loading')
-        try {
-            // Wire this up to your real waitlist endpoint, e.g.:
-            // await fetch('/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) })
-            await new Promise((resolve) => setTimeout(resolve, 700))
-            setStatus('success')
-            setEmail('')
-        } catch {
-            setStatus('error')
-        }
-    }
 
     return (
         <footer className="border-t border-slate-100 bg-white pb-8" role="contentinfo">
@@ -105,7 +81,7 @@ const Footer: React.FC = () => {
                         '@context': 'https://schema.org',
                         '@type': 'Organization',
                         name: 'RaddiGo',
-                        url: 'https://raddigo.pk',
+                        url: 'https://www.raddigo.tech',
                         email: 'hello@raddigo.pk',
                         sameAs: socialLinks.map((s) => s.href),
                     }),
@@ -120,7 +96,7 @@ const Footer: React.FC = () => {
                             <div>
                                 <h3 className="font-heading text-lg font-bold text-brand-dark">RaddiGo</h3>
                                 <p className="max-w-xs text-sm text-slate-500">
-                                    Apni raddi asaan tareeqay se bechain, pickup book karain, aur cash hasil karain.
+                                    Lahore scrap rates, sorting guides, aur recycling maloomat — asaan aur saaf tareeqay se.
                                 </p>
                             </div>
                         </NavLink>
@@ -163,59 +139,38 @@ const Footer: React.FC = () => {
                         </nav>
                     ))}
 
-                    {/* App + waitlist */}
+                    {/* Rates + guides — this site does not offer booking or an app */}
                     <div className="col-span-2 sm:col-span-3 lg:col-span-5 lg:border-t lg:border-slate-100 lg:pt-8">
                         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                             <div>
-                                <h4 className="mb-2 text-sm font-semibold text-brand-dark">App Milay Gi</h4>
+                                <h4 className="mb-2 text-sm font-semibold text-brand-dark">Start with the rates</h4>
                                 <p className="mb-3 max-w-sm text-sm text-slate-500">
-                                    Android aur iOS dono par jald hi launch ho rahi hai — waitlist join karain.
+                                    Check the per-kg rate, sort your scrap, and compare offers before you sell.
                                 </p>
-                                <div className="flex items-center gap-3">
-                                    <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-                                        <img src={gpBadge} alt="Get it on Google Play" className="h-10 object-contain" />
-                                    </a>
-                                    <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                                        <img src={appBadge} alt="Download on the App Store" className="h-10 object-contain" />
-                                    </a>
+                                <div className="flex flex-wrap gap-3">
+                                    <NavLink
+                                        to="/live-rates"
+                                        className="inline-block rounded-full bg-brand-green px-5 py-2.5 text-sm font-semibold text-white"
+                                    >
+                                        View live rates
+                                    </NavLink>
+                                    <NavLink
+                                        to="/recycling-guide"
+                                        className="inline-block rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-brand-dark"
+                                    >
+                                        Recycling guide
+                                    </NavLink>
                                 </div>
                             </div>
-
-                            <form onSubmit={handleSubmit} noValidate className="w-full max-w-sm">
-                                <label htmlFor="footer-waitlist-email" className="mb-2 block text-sm font-semibold text-brand-dark">
-                                    Join the waitlist
-                                </label>
-                                <div className="flex gap-2">
-                                    <input
-                                        id="footer-waitlist-email"
-                                        name="email"
-                                        type="email"
-                                        required
-                                        value={email}
-                                        onChange={(e) => {
-                                            setEmail(e.target.value)
-                                            if (status !== 'idle') setStatus('idle')
-                                        }}
-                                        placeholder="aapka@email.com"
-                                        aria-invalid={status === 'error'}
-                                        aria-describedby="footer-waitlist-message"
-                                        className={`flex-1 rounded-md border px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-brand-green/40 ${
-                                            status === 'error' ? 'border-red-400' : 'border-slate-300'
-                                        }`}
-                                    />
-                                    <button
-                                        type="submit"
-                                        disabled={status === 'loading'}
-                                        className="shrink-0 rounded-md bg-brand-dark px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-                                    >
-                                        {status === 'loading' ? 'Joining…' : 'Join'}
-                                    </button>
-                                </div>
-                                <p id="footer-waitlist-message" className="mt-2 min-h-[1.25rem] text-sm" aria-live="polite">
-                                    {status === 'success' && <span className="text-brand-green">You're on the list — shukriya!</span>}
-                                    {status === 'error' && <span className="text-red-500">Please enter a valid email address.</span>}
+                            <div className="max-w-sm text-sm text-slate-500">
+                                <p>
+                                    Questions about a rate or a guide? Email{' '}
+                                    <a href="mailto:hello@raddigo.pk" className="font-semibold text-brand-dark hover:text-brand-green">
+                                        hello@raddigo.pk
+                                    </a>
+                                    . This site does not take bookings or payments.
                                 </p>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const cities = [
-    { name: 'Lahore', note: 'Main launch city', live: true },
-    { name: 'Islamabad', note: 'Coming soon', live: false },
-    { name: 'Rawalpindi', note: 'Coming soon', live: false },
-    { name: 'Karachi', note: 'Coming soon', live: false },
+    { name: 'Lahore', note: 'Rates covered on this site', live: true },
+    { name: 'Islamabad', note: 'No city rates published yet', live: false },
+    { name: 'Rawalpindi', note: 'No city rates published yet', live: false },
+    { name: 'Karachi', note: 'No city rates published yet', live: false },
 ]
 
 const CoverageSection: React.FC = () => {
@@ -14,11 +15,12 @@ const CoverageSection: React.FC = () => {
                 <div className="mx-auto max-w-3xl text-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-green">City coverage</p>
                     <h2 id="coverage-heading" className="mt-3 text-3xl font-heading font-bold text-brand-dark">
-                        Expanding from Lahore to more cities across Pakistan
+                        Lahore rates first — other cities, honestly labelled
                     </h2>
                     <p className="mt-4 text-lg text-slate-600">
-                        We are starting strong in Lahore and preparing to bring the same fast pickup experience to more urban
-                        neighborhoods soon.
+                        This site currently publishes rates with a Lahore focus. Other cities are listed here so readers
+                        are not misled: no separate city rates for them are published yet, and this site does not offer
+                        pickup in any city.
                     </p>
                 </div>
 
@@ -37,6 +39,15 @@ const CoverageSection: React.FC = () => {
                         </li>
                     ))}
                 </ul>
+
+                <div className="mt-10 text-center">
+                    <NavLink
+                        to="/coverage"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        About coverage →
+                    </NavLink>
+                </div>
             </div>
         </section>
     )
