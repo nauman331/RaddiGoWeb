@@ -3,39 +3,54 @@ import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
+const cities = [
+    { name: 'Lahore', detail: 'Rates covered on this site. The per-kg rates and guides here focus on Lahore scrap sellers.' },
+    { name: 'Islamabad', detail: 'No separate city rates published yet. The Lahore rates are shown as a general guide only.' },
+    { name: 'Rawalpindi', detail: 'No separate city rates published yet. The Lahore rates are shown as a general guide only.' },
+    { name: 'Karachi', detail: 'No separate city rates published yet. The Lahore rates are shown as a general guide only.' },
+]
+
 const Coverage: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-white text-slate-800">
-      <Navbar />
-      <main className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-semibold uppercase tracking-[0.2em] text-brand-green">Coverage</p>
-          <h1 className="mt-3 font-heading text-4xl font-bold text-brand-dark">Serving Lahore first and expanding to more cities over time</h1>
-          <p className="mt-4 text-lg text-slate-600">RaddiGo is beginning with Lahore to build a strong local service experience before expanding to more cities across Pakistan.</p>
-        </div>
+    return (
+        <div className="bg-white font-sans text-slate-800 antialiased">
+            <Navbar />
+            <main className="mx-auto max-w-4xl px-6 py-16">
+                <h1 className="text-3xl font-heading font-bold text-brand-dark">Coverage: which cities this site covers</h1>
+                <p className="mt-4 text-lg text-slate-600">
+                    RaddiGo is an informational site, not a pickup service, so “coverage” here means which cities the
+                    rates and guides on this site are written for — not where a service operates. Lahore is the focus;
+                    other cities are listed honestly, with no separate rates published for them yet.
+                </p>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
-            <h2 className="text-2xl font-bold text-brand-dark">Current focus</h2>
-            <p className="mt-3 text-slate-600">Our first service zone is Lahore so we can ensure fast response times, dependable pickup quality, and strong local support.</p>
-          </div>
-          <div className="rounded-3xl bg-brand-light p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-brand-dark">Future expansion</h2>
-            <p className="mt-3 text-slate-600">As the platform grows, we aim to bring the same experience to more neighborhoods and cities across Pakistan.</p>
-          </div>
-        </div>
+                <div className="mt-10 space-y-6">
+                    {cities.map((city) => (
+                        <div key={city.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                            <h2 className="text-xl font-bold text-brand-dark">{city.name}</h2>
+                            <p className="mt-2 text-slate-600">{city.detail}</p>
+                        </div>
+                    ))}
+                </div>
 
-        <div className="mt-10 rounded-3xl bg-brand-dark p-8 text-white">
-          <h2 className="text-2xl font-bold">Want service in your area?</h2>
-          <p className="mt-3 text-slate-300">Join the waitlist and let us know where you want pickup support so we can plan the next expansion step.</p>
-          <div className="mt-6">
-            <NavLink to="/" className="inline-block rounded-full bg-brand-green px-5 py-3 font-semibold text-white">Join waitlist</NavLink>
-          </div>
+                <p className="mt-10 text-slate-600">
+                    If you live outside Lahore, use the Lahore rates only as a rough guide and confirm the rate with a
+                    buyer in your own city — prices vary by place as well as by material and market.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                    <NavLink
+                        to="/live-rates"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        View live rates
+                    </NavLink>
+                    <NavLink to="/contact" className="inline-block px-6 py-3 font-semibold text-brand-dark hover:text-brand-green">
+                        Contact us →
+                    </NavLink>
+                </div>
+            </main>
+            <Footer />
         </div>
-      </main>
-      <Footer />
-    </div>
-  )
+    )
 }
 
 export default Coverage
