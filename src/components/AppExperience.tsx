@@ -39,10 +39,10 @@ const AppExperience: React.FC = () => {
                     </ul>
                     <div className="mt-8">
                         <NavLink
-                            to="/recycling-guide"
+                            to="/how-scrap-rates-work"
                             className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
                         >
-                            Sorting guide →
+                            How scrap rates work →
                         </NavLink>
                     </div>
                 </div>

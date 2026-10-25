@@ -18,6 +18,10 @@ const Contact = lazy(() => import('./pages/Contact'))
 const FAQPage = lazy(() => import('./pages/FAQPage'))
 const Terms = lazy(() => import('./pages/Terms'))
 const Privacy = lazy(() => import('./pages/Privacy'))
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
+const HowScrapRatesWork = lazy(() => import('./pages/HowScrapRatesWork'))
+const SortScrapAtHome = lazy(() => import('./pages/SortScrapAtHome'))
+const MaterialsRecyclingExplained = lazy(() => import('./pages/MaterialsRecyclingExplained'))
 
 const App: React.FC = () => {
   return (
@@ -39,6 +43,10 @@ const App: React.FC = () => {
         <Route path='/faq' element={<FAQPage />} />
         <Route path='/terms' element={<Terms />} />
         <Route path='/privacy' element={<Privacy />} />
+        <Route path='/cookie-policy' element={<CookiePolicy />} />
+        <Route path='/how-scrap-rates-work' element={<HowScrapRatesWork />} />
+        <Route path='/sort-scrap-at-home' element={<SortScrapAtHome />} />
+        <Route path='/materials-recycling-explained' element={<MaterialsRecyclingExplained />} />
       </Routes>
     </Suspense>
   )

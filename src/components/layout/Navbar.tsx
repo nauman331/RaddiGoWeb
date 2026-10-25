@@ -12,8 +12,8 @@ const desktopMenus = [
         items: [
             { label: 'How it works', to: '/how-it-works', description: 'How selling scrap generally works' },
             { label: 'Live rates', to: '/live-rates', description: 'Check today’s scrap prices' },
-            { label: 'Lahore pickup', to: '/lahore-pickup', description: 'Lahore rates and materials' },
-            { label: 'Business pickup', to: '/business-pickup', description: 'Sorting and rates for shops and offices' },
+            { label: 'Lahore rates', to: '/lahore-pickup', description: 'Lahore rates and materials' },
+            { label: 'Business rates', to: '/business-pickup', description: 'Sorting and rates for shops and offices' },
             { label: 'Sell scrap', to: '/sell-scrap', description: 'Materials, rates and sorting tips' },
             { label: 'Pricing', to: '/pricing', description: 'Simple rates and service options' },
         ],
@@ -37,6 +37,9 @@ const desktopMenus = [
             { label: 'About', to: '/about', description: 'Our mission and story' },
             { label: 'Coverage', to: '/coverage', description: 'Cities covered by this site' },
             { label: 'Recycling guide', to: '/recycling-guide', description: 'How to sort scrap properly' },
+            { label: 'How scrap rates work', to: '/how-scrap-rates-work', description: 'Why rates change and how to judge an offer' },
+            { label: 'Sort scrap at home', to: '/sort-scrap-at-home', description: 'A simple home sorting system' },
+            { label: 'Materials explained', to: '/materials-recycling-explained', description: 'Paper, plastic and metal recycling' },
         ],
     },
     {
@@ -46,6 +49,7 @@ const desktopMenus = [
             { label: 'Contact', to: '/contact', description: 'Reach our team' },
             { label: 'Terms', to: '/terms', description: 'Terms for this informational site' },
             { label: 'Privacy', to: '/privacy', description: 'Data and privacy policy' },
+            { label: 'Cookie Policy', to: '/cookie-policy', description: 'How this site uses cookies' },
         ],
     },
 ]

@@ -10,8 +10,8 @@ const footerColumns = [
         links: [
             { label: 'How it works', to: '/how-it-works' },
             { label: 'Live rates', to: '/live-rates' },
-            { label: 'Lahore pickup', to: '/lahore-pickup' },
-            { label: 'Business pickup', to: '/business-pickup' },
+            { label: 'Lahore rates', to: '/lahore-pickup' },
+            { label: 'Business rates', to: '/business-pickup' },
             { label: 'Sell scrap', to: '/sell-scrap' },
             { label: 'Pricing', to: '/pricing' },
         ],
@@ -24,15 +24,19 @@ const footerColumns = [
             { label: 'About', to: '/about' },
             { label: 'Coverage', to: '/coverage' },
             { label: 'Recycling guide', to: '/recycling-guide' },
+            { label: 'How scrap rates work', to: '/how-scrap-rates-work' },
+            { label: 'Sort scrap at home', to: '/sort-scrap-at-home' },
+            { label: 'Materials explained', to: '/materials-recycling-explained' },
         ],
     },
     {
         heading: 'Company',
         links: [
             { label: 'Contact', to: '/contact' },
-            { label: 'Become a Collector', to: '/get-started' },
+            { label: 'Get started', to: '/get-started' },
             { label: 'Terms', to: '/terms' },
             { label: 'Privacy', to: '/privacy' },
+            { label: 'Cookie Policy', to: '/cookie-policy' },
         ],
     },
 ]
