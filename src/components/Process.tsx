@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import raddi from '../assets/raddi.jpeg'
 import digitalscale from '../assets/digitalscale.jpeg'
-import trashcash from '../assets/trashcash.jpeg'
 
 // General advice for selling scrap anywhere — not a RaddiGo booking flow.
 // RaddiGo does not offer pickup booking on this site.
@@ -25,8 +24,8 @@ const steps = [
         title: 'Compare offers, then sell',
         description:
             'Rates change with the market and with quality and quantity. Compare more than one offer, confirm the rate and the weight, and only then agree to sell.',
-        img: trashcash,
-        alt: 'Cash value of sorted scrap materials',
+        img: raddi,
+        alt: 'Stacked newspapers and sorted scrap ready to sell',
     },
 ]
 

@@ -52,8 +52,7 @@ const Privacy: React.FC = () => {
                     Google ki website par maujood hain.
                 </p>
                 <p className="mt-3 text-slate-600">
-                    Is site par Google AdSense ka publisher ID abhi shaamil nahi kiya gaya hai; jab AdSense account ban
-                    jayega, to ads.txt file mein woh ID shaya ki jayegi.
+                    Is site ka Google AdSense publisher ID pub-9666180146292972 hai, jo ads.txt file mein shaya hai.
                 </p>
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">3. Teesre fareeq</h2>
