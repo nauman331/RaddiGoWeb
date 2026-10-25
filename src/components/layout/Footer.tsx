@@ -77,20 +77,6 @@ const Footer: React.FC = () => {
 
     return (
         <footer className="border-t border-slate-100 bg-white pb-8" role="contentinfo">
-            {/* Helps search engines understand this is an org/brand entity */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'Organization',
-                        name: 'RaddiGo',
-                        url: 'https://www.raddigo.tech',
-                        email: 'hello@raddigo.pk',
-                        sameAs: socialLinks.map((s) => s.href),
-                    }),
-                }}
-            />
 
             <div className="mx-auto max-w-7xl px-6">
                 <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-12 text-slate-700 sm:grid-cols-3 lg:grid-cols-5">

@@ -1,6 +1,7 @@
 import './index.css'
 import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import RouteSeo from './components/RouteSeo'
 
 const Home = lazy(() => import('./pages/Home'))
 const HowItWorks = lazy(() => import('./pages/HowItWorks'))
@@ -26,6 +27,7 @@ const MaterialsRecyclingExplained = lazy(() => import('./pages/MaterialsRecyclin
 const App: React.FC = () => {
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-slate-600">Loading...</div>}>
+      <RouteSeo />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/how-it-works' element={<HowItWorks />} />
