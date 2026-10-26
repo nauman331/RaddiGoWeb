@@ -31,6 +31,34 @@ const Coverage: React.FC = () => {
                     ))}
                 </div>
 
+                <h2 className="mt-12 text-2xl font-bold text-brand-dark">What to do if your city is not listed</h2>
+                <p className="mt-4 text-slate-600">
+                    Start with the Lahore rates as a rough guide only, then check the same material with a buyer in
+                    your own city before you sell. Rates vary by place as well as by material, quality, quantity, and
+                    market — so a Lahore figure is a starting point for comparison, not a promise for another city.
+                </p>
+                <ul className="mt-4 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>
+                        Read <NavLink to="/how-scrap-rates-work" className="font-semibold text-brand-dark hover:text-brand-green">how scrap rates work</NavLink> to
+                        see which factors move a rate up or down.
+                    </li>
+                    <li>
+                        Sort and weigh your material first — the <NavLink to="/recycling-guide" className="font-semibold text-brand-dark hover:text-brand-green">recycling guide</NavLink> shows
+                        how sorting helps you compare offers fairly.
+                    </li>
+                    <li>
+                        Confirm the rate, the weight, and the material type with your local buyer, and work out the
+                        total yourself before agreeing to a sale.
+                    </li>
+                </ul>
+
+                <h2 className="mt-12 text-2xl font-bold text-brand-dark">What the guides cover everywhere</h2>
+                <p className="mt-4 text-slate-600">
+                    The sorting, safety, and rate-reading guides on this site are general advice that applies wherever
+                    you are. Only the per-kg rates themselves are Lahore-focused — so use the guides freely, but treat
+                    every rate as local to Lahore until a buyer in your city confirms otherwise.
+                </p>
+
                 <p className="mt-10 text-slate-600">
                     If you live outside Lahore, use the Lahore rates only as a rough guide and confirm the rate with a
                     buyer in your own city — prices vary by place as well as by material and market.
