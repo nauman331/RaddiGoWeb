@@ -50,17 +50,6 @@ const socialLinks = [
         ),
     },
     {
-        label: 'Instagram',
-        href: 'https://instagram.com/raddigo',
-        icon: (
-            <>
-                <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-                <circle cx="12" cy="12" r="3.7" />
-                <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
-            </>
-        ),
-    },
-    {
         label: 'LinkedIn',
         href: 'https://linkedin.com/company/raddigo',
         icon: (
