@@ -34,6 +34,15 @@ const SellScrap: React.FC = () => {
                     ))}
                 </div>
 
+                <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+                    <h2 className="text-xl font-bold text-brand-dark">Zaroori baat: yeh rates indicative hain</h2>
+                    <p className="mt-2 text-slate-700">
+                        Yeh rates indicative hain aur market ke sath badalte hain. Buyer aap ko is se zyada ya kam
+                        offer kar sakta hai — bechne se pehle rate, wazan aur material ki type confirm karein, aur kul
+                        raqam khud hisab karke dekhein.
+                    </p>
+                </div>
+
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Bechne se pehle 3 kaam</h2>
                 <ol className="mt-3 list-decimal space-y-2 pl-6 text-slate-600">
                     <li>Rate dekhein — live rates page par har material ka per-kg rate maujood hai.</li>
