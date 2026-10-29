@@ -38,6 +38,13 @@ const About: React.FC = () => {
                     <li>Rates indicative hain aur market ke sath badalte hain — yeh baat har page par saaf likhi jaye.</li>
                 </ul>
 
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">RaddiGo kon chalata hai</h2>
+                <p className="mt-3 text-slate-600">
+                    RaddiGo ko Lahore mein Muhammad Nauman chalate hain — wo NSolvers ke founder hain, jo websites
+                    aur mobile apps banane wali company hai. Is site ke rates aur guides unhi ki nigrani mein likhe
+                    aur update hote hain, taake maloomat durust aur ghair-janibdar rahe.
+                </p>
+
                 <p className="mt-10 text-slate-600">
                     Koi sawal, rate ki ghalti, ya mashwara ho to humein email karein:{' '}
                     <a href="mailto:hello@raddigo.pk" className="font-semibold text-brand-dark hover:text-brand-green">
