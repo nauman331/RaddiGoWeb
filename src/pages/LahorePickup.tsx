@@ -20,8 +20,9 @@ const LahorePickup: React.FC = () => {
                 <h1 className="text-3xl font-heading font-bold text-brand-dark">Lahore scrap rates aur materials</h1>
                 <p className="mt-4 text-lg text-slate-600">
                     Lahore mein raddi bechne se pehle rate aur sorting jaan lena behtar hai. Is page par Lahore ke liye
-                    shaya kiye gaye per-kg rates aur har material ki sorting ki bunyadi rehnumai hai. Yeh website pickup
-                    booking nahi karti — yeh maloomat sirf aap ki rehnumai ke liye hai.
+                    shaya kiye gaye per-kg rates, har material ki sorting ki bunyadi rehnumai, aur sheher mein aam tor
+                    par raddi bechne ke tareeqe hain. Yeh website pickup booking nahi karti — yeh maloomat sirf aap ki
+                    rehnumai ke liye hai.
                 </p>
 
                 <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -33,6 +34,33 @@ const LahorePickup: React.FC = () => {
                         </div>
                     ))}
                 </div>
+
+                <h2 className="mt-12 text-2xl font-bold text-brand-dark">Lahore mein aam tor par raddi kahan bechte hain</h2>
+                <p className="mt-3 text-slate-600">
+                    Aksar gharon mein mohalle ka kabari sab se aasan option hota hai — wo ghar aakar wazan karke le
+                    jata hai, lekin rate aksar bazaar se thora kam hota hai kyun ke us ka apna kharcha aur munafa
+                    shamil hai. Doosra tareeqa scrap markets aur bare dealers hain, jahan wazan zyada aur rate aam tor
+                    par behtar milta hai, magar aap ko maal khud pohanchana parta hai. Teesra tareeqa online rate dekh
+                    kar kai buyers se phone par baat karna hai, phir behtareen offer wale ko bulana. Teenon mein se
+                    koi bhi ghalat nahi — farq sirf sahulat aur rate ka hai.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Ghar ki safai ke moqay par</h2>
+                <p className="mt-3 text-slate-600">
+                    Sab se zyada raddi aam tor par ghar shifting, bari safai, ya purana saman nikalte waqt nikalti hai.
+                    Aise moqon par jald bazi mein sab kuch ek sath bechne ke bajaye thora waqt nikal kar sorting kar
+                    lein: kagaz alag, plastic alag, loha alag, aur electronics sab se alag. Tamba ya pital ki chhoti
+                    cheezein (purane nalke, taarein) aksar bhool jati hain — inhein dhoond kar alag karna faida mand
+                    hota hai kyun ke in ka per-kg rate sab se zyada hai.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Wazan ka khayal rakhein</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>Har material ka wazan alag alag karwayein, taake rate saaf lage.</li>
+                    <li>Tarazu zero par ho, yeh dekh lein phir maal rakhein.</li>
+                    <li>Geela kagaz wazan barha deta hai magar qeemat kam — sookha rakhna behtar hai.</li>
+                    <li>Kul raqam khud hisab karein: har material ka wazan × us ka per-kg rate.</li>
+                </ul>
 
                 <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-6">
                     <h2 className="text-xl font-bold text-brand-dark">Zaroori baat</h2>
