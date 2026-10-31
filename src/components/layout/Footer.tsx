@@ -49,16 +49,6 @@ const socialLinks = [
             <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.5c0-.87.24-1.46 1.5-1.46H16.5V4.34C16.19 4.3 15.13 4.2 13.9 4.2c-2.5 0-4.2 1.53-4.2 4.34V10.5H7v3h2.7V21h3.8z" />
         ),
     },
-    {
-        label: 'LinkedIn',
-        href: 'https://linkedin.com/company/raddigo',
-        icon: (
-            <>
-                <rect x="3.5" y="3.5" width="17" height="17" rx="2.5" />
-                <path d="M7.7 10v6.3M7.7 7.7v.01M11 16.3V12.6c0-1.2.9-2.1 2.1-2.1s2.1.9 2.1 2.1v3.7" strokeLinecap="round" />
-            </>
-        ),
-    },
 ]
 
 const Footer: React.FC = () => {
