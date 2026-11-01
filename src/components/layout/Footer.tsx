@@ -41,16 +41,6 @@ const footerColumns = [
     },
 ]
 
-const socialLinks = [
-    {
-        label: 'Facebook',
-        href: 'https://facebook.com/raddigo',
-        icon: (
-            <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.5c0-.87.24-1.46 1.5-1.46H16.5V4.34C16.19 4.3 15.13 4.2 13.9 4.2c-2.5 0-4.2 1.53-4.2 4.34V10.5H7v3h2.7V21h3.8z" />
-        ),
-    },
-]
-
 const Footer: React.FC = () => {
     const year = new Date().getFullYear()
 
@@ -74,22 +64,6 @@ const Footer: React.FC = () => {
                             hello@raddigo.pk
                         </a>
 
-                        <div className="mt-5 flex items-center gap-2">
-                            {socialLinks.map((s) => (
-                                <a
-                                    key={s.label}
-                                    href={s.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={s.label}
-                                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-brand-green hover:text-brand-green"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-4 w-4">
-                                        {s.icon}
-                                    </svg>
-                                </a>
-                            ))}
-                        </div>
                     </div>
 
                     {/* Link columns */}
