@@ -50,7 +50,8 @@ const LiveRates: React.FC = () => {
                         Rates change with the market, and the amount a buyer offers also depends on the material's
                         condition, its weight, and the quantity being sold. A buyer may offer more or less than the rate
                         shown here. Always confirm the rate, the weight, and the material type with your buyer before
-                        selling, and work out the total yourself.
+                        selling, and work out the total yourself. The rates on this site are updated to stay indicative
+                        of the market, but they are a guide, not a promise.
                     </p>
                 </div>
 

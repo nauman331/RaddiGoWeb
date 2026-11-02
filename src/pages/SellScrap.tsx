@@ -39,7 +39,8 @@ const SellScrap: React.FC = () => {
                     <p className="mt-2 text-slate-700">
                         Yeh rates indicative hain aur market ke sath badalte hain. Buyer aap ko is se zyada ya kam
                         offer kar sakta hai — bechne se pehle rate, wazan aur material ki type confirm karein, aur kul
-                        raqam khud hisab karke dekhein.
+                        raqam khud hisab karke dekhein. Is site ke rates market ke mutabiq update rakhe jate hain taake
+                        woh indicative rahen.
                     </p>
                 </div>
 

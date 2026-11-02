@@ -39,7 +39,8 @@ const BusinessPickup: React.FC = () => {
                 <p className="mt-3 text-slate-600">
                     Akhbar Rs. 80/kg, Plastic Rs. 40/kg, Loha Rs. 110/kg, Electronics Rs. 200/kg, Tamba Rs. 1800/kg,
                     Cardboard Rs. 30/kg. Yeh rates indicative hain — buyer se bechne se pehle rate aur wazan confirm
-                    karein, aur kul raqam khud hisab karein.
+                    karein, aur kul raqam khud hisab karein. Is site ke rates market ke mutabiq update rakhe jate hain
+                    taake woh indicative rahen.
                 </p>
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Simple hisab-kitab rakhein</h2>
