@@ -50,8 +50,7 @@ const LiveRates: React.FC = () => {
                         Rates change with the market, and the amount a buyer offers also depends on the material's
                         condition, its weight, and the quantity being sold. A buyer may offer more or less than the rate
                         shown here. Always confirm the rate, the weight, and the material type with your buyer before
-                        selling, and work out the total yourself. The rates on this site are updated to stay indicative
-                        of the market, but they are a guide, not a promise.
+                        selling, and work out the total yourself.
                     </p>
                 </div>
 
@@ -64,6 +63,52 @@ const LiveRates: React.FC = () => {
                         <li><strong>Market:</strong> scrap prices move with demand for recycled material, so rates change over time.</li>
                     </ul>
                 </div>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">How to read these rates</h2>
+                <p className="mt-3 text-slate-600">
+                    Each rate on this page is a per-kilogram guide for one material on its own. It is the value of that
+                    material when it is clean, dry, and separated from other waste — not the value of a mixed pile.
+                    That is why the rates look so different from each other: copper is in steady demand for electrical
+                    work and is rarely found in large amounts at home, so it is worth far more per kilogram than
+                    cardboard, which is bulky and light. Plastic sits in the middle, and iron and electronics fall
+                    between the two. The notes in the table say what usually matters most for each material. Use the
+                    rate as a starting point for your own calculation, then confirm the actual rate, weight, and
+                    condition with your buyer before you agree to sell.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Two worked examples</h2>
+                <p className="mt-3 text-slate-600">
+                    Working out a total is simple once each material is weighed on its own. For example, 25 kg of
+                    newspaper at Rs. 80/kg comes to Rs. 2,000, and 8 kg of plastic at Rs. 40/kg comes to Rs. 320 —
+                    Rs. 2,320 for the two together. A smaller, higher-value load works the same way: 3 kg of copper
+                    at Rs. 1800/kg comes to Rs. 5,400, and 12 kg of iron at Rs. 110/kg comes to Rs. 1,320. These are
+                    examples only, worked out from the rates on this page. A buyer may adjust the offer for the
+                    condition of the material or the size of the load, so always work out your own total first and
+                    compare it with the offer you are given.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Common mistakes when checking rates</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li><strong>Comparing a mixed pile with a separated rate:</strong> mixed scrap is usually valued lower, so the rate on this page only applies when each material is weighed on its own.</li>
+                    <li><strong>Forgetting condition:</strong> wet paper, damp cardboard, and dirty plastic are usually valued lower than dry, clean material.</li>
+                    <li><strong>Agreeing to a rate without checking the weight:</strong> the rate and the weight together decide the total, so both need confirming.</li>
+                    <li><strong>Taking the first offer:</strong> even a short comparison with another buyer can show whether an offer is fair, and it costs nothing but a little time.</li>
+                </ul>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Frequently asked questions</h2>
+                <p className="mt-3 text-slate-600">
+                    <strong>Do these rates change every day?</strong> Rates move with the market, so they can change
+                    over time. Check this page again before you sell, and confirm the rate with your buyer on the day.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Why did a buyer offer less than the rate shown here?</strong> The rate is a guide for
+                    clean, dry, separated material. If your material is wet, mixed, or in a small quantity, a buyer
+                    may offer less. Ask which rate applies to your material in its actual condition.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Can I use the Lahore rates in another city?</strong> Only as a rough guide. Prices vary
+                    by place as well as by material, so confirm the rate with a buyer in your own city before you sell.
+                </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink

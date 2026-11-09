@@ -7,7 +7,9 @@ import { useLocation } from 'react-router-dom'
 // pages as duplicates of home. This keeps each route's title, description
 // and canonical accurate. No booking, app or service promises anywhere:
 // this is an informational rates-and-guides site.
-const ROUTE_SEO: Record<string, { title: string; description: string }> = {
+// Exported so the prerender script can reuse the same titles,
+// descriptions and canonicals that the client sets at runtime.
+export const ROUTE_SEO: Record<string, { title: string; description: string }> = {
     '/': {
         title: 'RaddiGo – Lahore Scrap Rates & Recycling Guide | Newspaper, Plastic, Iron & Copper Prices',
         description:

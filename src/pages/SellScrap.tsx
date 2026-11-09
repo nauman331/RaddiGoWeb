@@ -34,22 +34,63 @@ const SellScrap: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-6">
-                    <h2 className="text-xl font-bold text-brand-dark">Zaroori baat: yeh rates indicative hain</h2>
-                    <p className="mt-2 text-slate-700">
-                        Yeh rates indicative hain aur market ke sath badalte hain. Buyer aap ko is se zyada ya kam
-                        offer kar sakta hai — bechne se pehle rate, wazan aur material ki type confirm karein, aur kul
-                        raqam khud hisab karke dekhein. Is site ke rates market ke mutabiq update rakhe jate hain taake
-                        woh indicative rahen.
-                    </p>
-                </div>
-
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Bechne se pehle 3 kaam</h2>
                 <ol className="mt-3 list-decimal space-y-2 pl-6 text-slate-600">
                     <li>Rate dekhein — live rates page par har material ka per-kg rate maujood hai.</li>
                     <li>Sort karein — kagaz sookha, plastic alag, loha alag, electronics alag.</li>
                     <li>Compare karein — ek se zyada buyers se rate poochein, wazan confirm karein, phir faisla karein.</li>
                 </ol>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Ghar mein raddi jama karne ki aadat</h2>
+                <p className="mt-3 text-slate-600">
+                    Raddi bechna asaan ho jata hai agar ghar mein usay jama karne ki halki si aadat ban jaye. Har
+                    material ke liye alag jagah ya bori rakhein — ek kagaz aur akhbar ke liye, ek plastic ke liye,
+                    aur ek cardboard ke liye. Hafte mein ek dafa in ko sort kar lein aur geeli ya gandi cheezon ko
+                    alag kar dein. Loha aur electronics ko aam waste se door rakhein. Jab dher theek miqdar mein ho
+                    jaye to rate dekh kar bech dein. Is tarah ghar saaf rehta hai aur har material ki qeemat bhi
+                    saaf samajh aati hai.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Wazan aur hisab kaise karein</h2>
+                <p className="mt-3 text-slate-600">
+                    Kul raqam ka hisab simple hai: har material ka wazan us ke per-kg rate se zarb dein, phir sab ko
+                    jama karein. Masalan, 12 kg akhbar Rs. 80/kg ke hisab se Rs. 960 bante hain, aur 6 kg plastic
+                    Rs. 40/kg ke hisab se Rs. 240 — dono mila kar Rs. 1,200. Yeh sirf misaal hai; asal offer material
+                    ki condition aur miqdar par depend karti hai. Har material ka wazan alag alag karwayein, taake
+                    hisab saaf ho. Rate aur wazan dono confirm karein, phir buyer ki offer se apna hisab mila kar
+                    dekhein — agar farq zyada ho to wajah poochein.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Aam ghaltiyan</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li><strong>Geela kagaz ya cardboard dena:</strong> geeli cheezon ki qeemat kam hoti hai, is liye kagaz ko hamesha sookha rakhein.</li>
+                    <li><strong>Sab kuch ek hi dher mein mila dena:</strong> mixed raddi ki qeemat alag alag material se kam hoti hai.</li>
+                    <li><strong>Pehli offer par foran maan lena:</strong> do ya teen buyers se rate poochne mein koi harj nahi.</li>
+                    <li><strong>Wazan check kiye baghair bech dena:</strong> rate aur wazan dono mila kar kul raqam banti hai, is liye dono confirm karna zaroori hai.</li>
+                </ul>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Aam sawalat</h2>
+                <p className="mt-3 text-slate-600">
+                    <strong>Kya chhoti miqdar bhi bechni chahiye?</strong> Haan, chhoti miqdar bhi qeemti hai, khaas
+                    tor par tamba ya electronics — lekin pehle rate aur wazan confirm kar lein.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Battery kahan rakhein?</strong> Battery ko aam scrap se alag rakhein, kabhi kholne ya
+                    todne ki koshish na karein, aur tooti battery ko khaali haath se na chhuein.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Rate kab check karein?</strong> Bechne se pehle live rates page par rate dekh lein,
+                    kyunki rate market ke sath badalta hai — aur buyer se us din ka rate zaroor confirm karein.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Ghar mein safety ka khayal rakhein</h2>
+                <p className="mt-3 text-slate-600">
+                    Ghar mein raddi sort karte waqt safety ka khayal rakhein. Bache sirf saaf kagaz aur cardboard
+                    sort karne mein madad karein — tez dhaar wala loha, toota sheesha, battery aur purane electronics
+                    se unhein door rakhein. Dastane pehnein jab loha ya tooti cheezein uthayein, aur kaam ke baad
+                    haath dho lein. Raddi ko sookhi aur hawa-daar jagah par rakhein, aur bhari cheezein neeche rakhein
+                    taake girne ka khatra na ho. Battery ko kabhi kholne ya jalane ki koshish na karein.
+                </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink

@@ -53,6 +53,51 @@ const Safety: React.FC = () => {
                     </ul>
                 </div>
 
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Storing scrap at home</h2>
+                <p className="mt-3 text-slate-600">
+                    Where you keep scrap matters as much as how you handle it. Store it in a dry, ventilated spot,
+                    away from cooking areas and open flames. Keep paper and cardboard off damp floors, and keep the
+                    walkway around the pile clear so nobody trips. Stack heavy items low so they cannot fall on
+                    someone, and keep sharp metal and broken glass in a sturdy container. Keep children away from
+                    scrap piles, sharp metal, and old electronics. If space is small, sort little and often rather
+                    than letting one large pile build up.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">What never to burn or break open</h2>
+                <p className="mt-3 text-slate-600">
+                    Some things should never be burned or opened at home. Batteries can leak or catch fire if they are
+                    punctured, crushed, or burned — keep them apart and handle them with care. Old electronics should
+                    not be opened, because broken screens and internal parts can be sharp or carry a charge. Aerosol
+                    cans and containers that held chemicals should never be burned or cut open. Paint tins and chemical
+                    containers should be kept away from general scrap. If you are unsure whether an item is hazardous,
+                    leave it aside and ask a local recycling point before handling it further.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">If something goes wrong</h2>
+                <p className="mt-3 text-slate-600">
+                    Most scrap handling is safe, but it helps to know what to do when something goes wrong. For a
+                    small cut from sharp metal or glass, clean the wound and cover it, and wash your hands. If a
+                    battery leaks, do not touch the liquid with bare hands — move the battery with gloves, ventilate
+                    the area, and wash your hands afterwards. If something starts to smoke or smell strongly, move
+                    away and let it cool in the open air rather than handling it. These are general tips only. For a
+                    serious injury or a fire, get help straight away and do not try to deal with it alone.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Frequently asked questions</h2>
+                <p className="mt-3 text-slate-600">
+                    <strong>Can children help sort scrap?</strong> Children can help with clean paper and cardboard,
+                    but keep them away from sharp metal, broken glass, batteries, and old electronics.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Where should I keep batteries?</strong> In a dry container, apart from other scrap, and
+                    out of reach of children. Never store them near heat.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Is it safe to store scrap indoors?</strong> Small amounts of dry paper, cardboard, and
+                    plastic are fine indoors if the area is ventilated. Keep heavy metal low, sharp items contained,
+                    and anything that smells of chemicals outside.
+                </p>
+
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink
                         to="/recycling-guide"

@@ -6,23 +6,15 @@ import Footer from '../components/layout/Footer'
 const steps = [
     {
         title: '1. Check the rate first',
-        text: 'Look up the per-kg rate for your material on the live rates page, so you know roughly what it is worth before you talk to any buyer. Write the rate down or keep the page open on your phone — sellers who know the going rate negotiate from a much stronger position than sellers who walk in blind.',
+        text: 'Look up the per-kg rate for your material on the live rates page, so you know roughly what it is worth before you talk to any buyer.',
     },
     {
         title: '2. Sort and weigh honestly',
-        text: 'Keep paper dry, separate plastic by type, and keep metal apart from other waste. Scrap is usually weighed at the buyer\u2019s shop, and clean, separated material is easier to value fairly. If you have a bathroom scale at home, weigh your pile roughly first so you have your own number to compare against the buyer\u2019s scale.',
+        text: 'Keep paper dry, separate plastic by type, and keep metal apart from other waste. Scrap is usually weighed, and clean, separated material is easier to value fairly.',
     },
     {
         title: '3. Compare offers, then sell',
-        text: 'Rates change with the market, quality, and quantity. Talk to more than one buyer where you can, confirm the rate and the weight for each material separately, and only then agree to sell. A buyer who will not tell you the per-kg rate before weighing is a buyer worth walking away from.',
-    },
-    {
-        title: '4. Watch the weighing',
-        text: 'Scrap is almost always sold by weight, so the weighing is the moment that decides your payment. Make sure the scale reads zero before your material goes on, that each material is weighed separately, and that you see the reading yourself. If anything is weighed together as \u201cmixed\u201d, expect a lower rate — that is normal, but it should be stated, not assumed.',
-    },
-    {
-        title: '5. Confirm payment before handing over',
-        text: 'Agree on how and when you will be paid before the material changes hands — cash on the spot is the norm for small household loads. Count the payment against your own calculation (weight \u00d7 rate per material) before you leave. Payment terms are strictly between you and your buyer.',
+        text: 'Rates change with the market, quality, and quantity. Compare more than one offer, confirm the rate and the weight, and only then agree to sell.',
     },
 ]
 
@@ -33,9 +25,9 @@ const HowItWorks: React.FC = () => {
             <main className="mx-auto max-w-4xl px-6 py-16">
                 <h1 className="text-3xl font-heading font-bold text-brand-dark">How selling scrap works</h1>
                 <p className="mt-4 text-lg text-slate-600">
-                    This page explains the general process of selling scrap in Lahore, step by step — from checking
-                    the rate to getting paid. RaddiGo does not offer pickup booking or payments; this site publishes
-                    rates and guides so you can sell with a clear picture of what your scrap is worth.
+                    This page explains the general process of selling scrap in Lahore. RaddiGo does not offer pickup
+                    booking or payments — this site publishes rates and guides so you can sell with a clear picture of
+                    what your scrap is worth.
                 </p>
 
                 <div className="mt-10 space-y-6">
@@ -47,24 +39,6 @@ const HowItWorks: React.FC = () => {
                     ))}
                 </div>
 
-                <h2 className="mt-12 text-2xl font-bold text-brand-dark">What happens at the buyer\u2019s shop</h2>
-                <p className="mt-3 text-slate-600">
-                    A typical sale is quick and informal. The buyer looks over your material, sorts anything you have
-                    not separated, and weighs each material on a scale. The per-kg rate is applied to each weight, and
-                    the totals are added up. The whole thing usually takes a few minutes for a household load. Knowing
-                    the steps in advance helps you notice if something is skipped — for example, if your copper is
-                    weighed together with your iron instead of separately.
-                </p>
-
-                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Common mistakes first-time sellers make</h2>
-                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
-                    <li><strong>Mixing everything in one bag.</strong> Mixed scrap is valued at the lowest rate in the mix. Ten minutes of sorting at home can be worth more than the trip itself.</li>
-                    <li><strong>Selling wet paper or cardboard.</strong> Wet paper weighs more but is worth less per kg — and many buyers discount it heavily or refuse it. Keep paper dry.</li>
-                    <li><strong>Not knowing the weight.</strong> If you have never weighed your pile, you cannot tell whether the buyer\u2019s scale agrees with reality. A rough home weighing costs nothing.</li>
-                    <li><strong>Accepting the first offer.</strong> Rates differ between buyers. One extra phone call or visit can change the total noticeably, especially for heavier loads.</li>
-                    <li><strong>Forgetting the small valuables.</strong> Copper wire, brass fittings, and old electronics are easy to overlook in a pile of ordinary scrap — pull them out and price them separately.</li>
-                </ul>
-
                 <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
                     <h2 className="text-xl font-bold text-brand-dark">Before you accept an offer</h2>
                     <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
@@ -74,6 +48,50 @@ const HowItWorks: React.FC = () => {
                         <li>Payment terms are between you and your buyer; confirm them before handing over the material.</li>
                     </ul>
                 </div>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Sorting at home, step by step</h2>
+                <p className="mt-3 text-slate-600">
+                    Sorting is easier if you do it in small steps. First, put everything in one place and look at what
+                    you have. Second, make a pile for paper and cardboard, and keep it dry — wet paper loses value
+                    quickly. Third, make a pile for plastic, and group it by type where you can. Fourth, put metal in
+                    its own pile, away from everything else. Fifth, set electronics and batteries aside on their own,
+                    and never open them. Once each pile is separate, weigh them one at a time. A sorted load is
+                    simpler for a buyer to value, and you can see exactly what each material is worth.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">What to do with tricky items</h2>
+                <p className="mt-3 text-slate-600">
+                    Some items need extra care. Batteries should be kept apart from general scrap and never punctured,
+                    crushed, or burned — a damaged battery can leak or catch fire. Broken screens and sharp metal
+                    should be handled with gloves and kept in a sturdy container. Wet paper and damp cardboard are hard
+                    to reuse, so keep them out of the dry piles. Mixed items — like a box with metal parts still
+                    attached — should be separated where you can, because a mixed item is usually valued lower than its
+                    parts would be on their own. If you are unsure about an item, set it aside and ask a local
+                    recycling point.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">How to compare two offers fairly</h2>
+                <p className="mt-3 text-slate-600">
+                    Two offers can only be compared if they are for the same thing. Make sure both buyers are pricing
+                    the same materials, in the same condition, at the same weights. Ask each one for the per-kg rate
+                    for every material separately, and work out the total yourself. If one offer is much lower, ask
+                    why — the answer is often the condition of the material or the way it was weighed. A fair
+                    comparison takes a few minutes, and it is the simplest way to know whether an offer is reasonable.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Frequently asked questions</h2>
+                <p className="mt-3 text-slate-600">
+                    <strong>What if I only have a small amount?</strong> A small amount is still worth selling,
+                    especially copper or electronics. Check the rate, weigh it, and compare offers the same way.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>What if my scrap is mixed?</strong> Mixed scrap is usually valued lower than separated
+                    material. Sort what you can — even separating paper from metal helps.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    <strong>Do I need to clean everything?</strong> You do not need to wash scrap, but dry and
+                    reasonably clean material is easier to value. Shake off loose dirt and keep paper dry.
+                </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink
