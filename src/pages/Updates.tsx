@@ -12,6 +12,11 @@ const posts = [
         title: 'Scrap-value calculator is live',
         body: 'A new calculator is now on the site: enter the weight of each material and it works out the estimated value from the per-kg rates published here, per material and combined. It is on its own page (/calculator) and on the home page. The totals are indicative only — they are worked out from the published rates, and the rate and weight should always be confirmed with the buyer before selling. The calculator uses exactly the six published rates and nothing else.',
     },
+    {
+        date: '17 Nov 2026',
+        title: 'Site improvements: authorship, rate history, and clearer guides',
+        body: 'Several improvements went live today. The About page now names Muhammad Nauman as the person who runs RaddiGo, with a short note on how the rates are checked. A new rate-history page records every rate check with its real date. The guides now explain grade and condition — for example clean versus mixed copper, and dry versus wet paper — and link to real references. The footer was cleaned up. The six published rates are unchanged.',
+    },
 ]
 
 const Updates: React.FC = () => {
