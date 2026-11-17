@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col items-center gap-3 border-t border-slate-100 pt-6 text-sm text-slate-500 sm:flex-row sm:justify-between">
-                    <p>&copy; {year} RaddiGo Team (GCS Lahore). Pakistan mein banaya gaya.</p>
+                    <p>&copy; {year} RaddiGo Team. Pakistan mein banaya gaya.</p>
                     <div className="flex items-center gap-4">
                         <NavLink to="/terms" className="hover:text-brand-green">Terms</NavLink>
                         <NavLink to="/privacy" className="hover:text-brand-green">Privacy</NavLink>
