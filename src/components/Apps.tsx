@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import RateCheckedStamp from './RateCheckedStamp'
 
 const rates = [
     { item: 'Newspaper', rate: 'Rs. 80/kg' },
@@ -94,6 +95,7 @@ const Apps: React.FC = () => {
                             These rates are indicative and change with the market. Confirm the rate, the weight, and the
                             material type with your buyer before selling.
                         </p>
+                        <RateCheckedStamp className="mt-4 text-sm text-slate-300" />
                     </div>
                 </div>
             </div>

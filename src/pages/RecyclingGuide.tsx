@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import ArticleJsonLd from '../components/ArticleJsonLd'
+import LastUpdated from '../components/LastUpdated'
 
 const sections = [
     {
@@ -35,6 +37,11 @@ const RecyclingGuide: React.FC = () => {
         <div className="bg-white font-sans text-slate-800 antialiased">
             <Navbar />
             <main className="mx-auto max-w-4xl px-6 py-16">
+                <ArticleJsonLd
+                    headline="Recycling guide: how to sort scrap at home"
+                    description="How to sort scrap properly: paper, cardboard, plastic, metal and electronics recycling explained."
+                    url="https://www.raddigo.tech/recycling-guide"
+                />
                 <h1 className="text-3xl font-heading font-bold text-brand-dark">Recycling guide: how to sort scrap at home</h1>
                 <p className="mt-4 text-lg text-slate-600">
                     Sorting scrap at home is the single most useful thing a seller can do. Clean, separated material is
@@ -61,6 +68,36 @@ const RecyclingGuide: React.FC = () => {
                         <li>Rates and weights: confirmed separately for each material, total worked out before agreeing.</li>
                     </ul>
                 </div>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Further reading</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Recycling — Wikipedia
+                        </a>
+                        {' '}— how recycling works in general, and why sorting matters.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Paper_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Paper recycling — Wikipedia
+                        </a>
+                        {' '}— how old paper is pulped and made into new paper.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Plastic_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Plastic recycling — Wikipedia
+                        </a>
+                        {' '}— how different plastic types are sorted and reprocessed.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Scrap" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Scrap — Wikipedia
+                        </a>
+                        {' '}— what scrap metal is, how it is graded, and how it is recycled.
+                    </li>
+                </ul>
+
+                <LastUpdated />
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink

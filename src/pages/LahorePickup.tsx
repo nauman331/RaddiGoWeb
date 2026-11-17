@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import RateCheckedStamp from '../components/RateCheckedStamp'
 
 const materials = [
     { name: 'Akhbar', rate: 'Rs. 80/kg', tip: 'Sookha aur bandha hua rakhein; geela kagaz ki qeemat kam hoti hai.' },
@@ -23,6 +24,7 @@ const LahorePickup: React.FC = () => {
                     shaya kiye gaye per-kg rates aur har material ki sorting ki bunyadi rehnumai hai. Yeh website pickup
                     booking nahi karti — yeh maloomat sirf aap ki rehnumai ke liye hai.
                 </p>
+                <RateCheckedStamp />
 
                 <div className="mt-10 grid gap-6 sm:grid-cols-2">
                     {materials.map((m) => (

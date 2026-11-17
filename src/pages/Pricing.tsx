@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import RateCheckedStamp from '../components/RateCheckedStamp'
+import LastUpdated from '../components/LastUpdated'
 
 const Pricing: React.FC = () => {
     return (
@@ -14,6 +16,7 @@ const Pricing: React.FC = () => {
                     and does not set the price any buyer pays you — the rates here are a public guide so you can judge
                     an offer before you accept it.
                 </p>
+                <RateCheckedStamp />
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">The rates on this site</h2>
                 <p className="mt-3 text-slate-600">
@@ -75,7 +78,11 @@ const Pricing: React.FC = () => {
                     together. And 20 kg of cardboard at Rs. 30/kg comes to Rs. 600, which shows why cardboard needs a
                     large quantity to add up. In every case, weigh each material on its own first, then multiply by
                     its rate. These are examples only; actual offers vary with condition, quantity, and the market on
-                    the day.
+                    the day. To work out your own load instead of reading examples, use the{' '}
+                    <NavLink to="/calculator" className="font-semibold text-brand-dark hover:text-brand-green">
+                        scrap value calculator
+                    </NavLink>
+                    .
                 </p>
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Frequently asked questions</h2>
@@ -95,7 +102,15 @@ const Pricing: React.FC = () => {
                     for a rate that may not come.
                 </p>
 
+                <LastUpdated />
+
                 <div className="mt-10 flex flex-wrap gap-4">
+                    <NavLink
+                        to="/calculator"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        Try the calculator
+                    </NavLink>
                     <NavLink
                         to="/live-rates"
                         className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"

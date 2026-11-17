@@ -110,6 +110,21 @@ export const ROUTE_SEO: Record<string, { title: string; description: string }> =
         description:
             'Paper, plastic and metal recycling explained: what each material is, how it is recycled, and how to sort it.',
     },
+    '/calculator': {
+        title: 'Scrap Value Calculator | RaddiGo',
+        description:
+            'Work out what your scrap is worth: enter the weight of each material and get an estimated total from RaddiGo’s published per-kg Lahore rates. Indicative only — confirm with your buyer.',
+    },
+    '/updates': {
+        title: 'Updates | RaddiGo',
+        description:
+            'What changed on RaddiGo, and when: new tools, rate checks, and guide updates, each dated on the day the work happened.',
+    },
+    '/rate-history': {
+        title: 'Rate History | RaddiGo',
+        description:
+            'A public log of every RaddiGo rate check: the date of each check and whether any rate changed.',
+    },
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {

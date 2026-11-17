@@ -16,6 +16,7 @@ const desktopMenus = [
             { label: 'Business rates', to: '/business-pickup', description: 'Sorting and rates for shops and offices' },
             { label: 'Sell scrap', to: '/sell-scrap', description: 'Materials, rates and sorting tips' },
             { label: 'Pricing', to: '/pricing', description: 'Simple rates and service options' },
+            { label: 'Calculator', to: '/calculator', description: 'Work out what your scrap is worth' },
         ],
     },
     {
@@ -40,6 +41,8 @@ const desktopMenus = [
             { label: 'How scrap rates work', to: '/how-scrap-rates-work', description: 'Why rates change and how to judge an offer' },
             { label: 'Sort scrap at home', to: '/sort-scrap-at-home', description: 'A simple home sorting system' },
             { label: 'Materials explained', to: '/materials-recycling-explained', description: 'Paper, plastic and metal recycling' },
+            { label: 'Rate history', to: '/rate-history', description: 'A public log of every rate check' },
+            { label: 'Updates', to: '/updates', description: 'What changed on this site, and when' },
         ],
     },
     {

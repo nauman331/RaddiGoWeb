@@ -2,12 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import ArticleJsonLd from '../components/ArticleJsonLd'
+import LastUpdated from '../components/LastUpdated'
 
 const SortScrapAtHome: React.FC = () => {
     return (
         <div className="bg-white font-sans text-slate-800 antialiased">
             <Navbar />
             <main className="mx-auto max-w-4xl px-6 py-16">
+                <ArticleJsonLd
+                    headline="How to sort scrap at home for better rates"
+                    description="A simple home sorting system for paper, plastic, metal and electronics to get fair value."
+                    url="https://www.raddigo.tech/sort-scrap-at-home"
+                />
                 <h1 className="text-3xl font-heading font-bold text-brand-dark">How to sort scrap at home for better rates</h1>
                 <p className="mt-4 text-lg text-slate-600">
                     Sorting scrap at home takes a few minutes a week, and it is the most reliable way to get a better
@@ -88,6 +95,36 @@ const SortScrapAtHome: React.FC = () => {
                     throws everything into one pile — not because the scrap is different, but because the buyer can see
                     exactly what is being sold.
                 </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Further reading</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Recycling — Wikipedia
+                        </a>
+                        {' '}— how recycling works in general, and why sorting matters.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Paper_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Paper recycling — Wikipedia
+                        </a>
+                        {' '}— why dry, clean paper recycles better than wet or stained paper.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Plastic_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Plastic recycling — Wikipedia
+                        </a>
+                        {' '}— how different plastic types are sorted and reprocessed.
+                    </li>
+                    <li>
+                        <a href="https://www.lwmc.com.pk/" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Lahore Waste Management Company (LWMC)
+                        </a>
+                        {' '}— Lahore's official waste management company.
+                    </li>
+                </ul>
+
+                <LastUpdated />
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink

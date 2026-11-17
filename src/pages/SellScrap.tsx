@@ -2,6 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import RateCheckedStamp from '../components/RateCheckedStamp'
+import LastUpdated from '../components/LastUpdated'
 
 const materials = [
     { name: 'Kagaz aur akhbar', rate: 'Rs. 80/kg', tip: 'Sookha rakhein, bandh kar dein, aur geele kagaz ko alag rakhein.' },
@@ -23,6 +25,7 @@ const SellScrap: React.FC = () => {
                     aur sorting jaan lena faida mand hai. Is page par materials, rates aur sorting ki bunyadi rehnumai
                     hai. Yeh website booking ya pickup nahi karti; yeh maloomat sirf aap ki madad ke liye hai.
                 </p>
+                <RateCheckedStamp />
 
                 <div className="mt-10 grid gap-6 sm:grid-cols-2">
                     {materials.map((m) => (
@@ -61,6 +64,25 @@ const SellScrap: React.FC = () => {
                     dekhein — agar farq zyada ho to wajah poochein.
                 </p>
 
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Buyer se kya poochein — checklist</h2>
+                <p className="mt-3 text-slate-600">
+                    Offer milne se pehle in sawalon ke jawab lein. Jo buyer in ke jawab saaf de, us ki offer par
+                    bharosa karna asaan hota hai:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li><strong>Har material ka alag rate kya hai?</strong> Mixed raddi ka aik rate na lein — kagaz, plastic, loha, tamba aur electronics ka rate alag alag poochein.</li>
+                    <li><strong>Wazan kaise hoga?</strong> Har material ka wazan alag alag tolwayein, aur tarazu par wazan khud dekh lein.</li>
+                    <li><strong>Condition par kya farq parega?</strong> Agar kagaz geela ho, loha zang-aluuda ho ya tamba mixed ho to rate mein kya farq hoga — pehle se pooch lein.</li>
+                    <li><strong>Kul raqam ka hisab kya hai?</strong> Har material ka wazan aur rate likh kar kul raqam khud hisab karein, aur buyer ke hisab se mila kar dekhein. Apna hisab pehle se tayyar rakhne ke liye{' '}
+                        <NavLink to="/calculator" className="font-semibold text-brand-dark hover:text-brand-green">
+                            calculator
+                        </NavLink>{' '}
+                        istemal kar sakte hain.
+                    </li>
+                    <li><strong>Payment kab aur kis tareeqe se hogi?</strong> Payment ki shartein material dene se pehle tay kar lein — kab, kis tareeqe se aur kis hisab se.</li>
+                    <li><strong>Rate usi din ka hai?</strong> Rate market ke sath badalta hai, is liye bechne wale din ka rate confirm karein.</li>
+                </ul>
+
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Aam ghaltiyan</h2>
                 <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
                     <li><strong>Geela kagaz ya cardboard dena:</strong> geeli cheezon ki qeemat kam hoti hai, is liye kagaz ko hamesha sookha rakhein.</li>
@@ -92,7 +114,15 @@ const SellScrap: React.FC = () => {
                     taake girne ka khatra na ho. Battery ko kabhi kholne ya jalane ki koshish na karein.
                 </p>
 
+                <LastUpdated />
+
                 <div className="mt-10 flex flex-wrap gap-4">
+                    <NavLink
+                        to="/calculator"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        Calculator istemal karein
+                    </NavLink>
                     <NavLink
                         to="/live-rates"
                         className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"

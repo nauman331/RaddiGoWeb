@@ -14,6 +14,7 @@ const footerColumns = [
             { label: 'Business rates', to: '/business-pickup' },
             { label: 'Sell scrap', to: '/sell-scrap' },
             { label: 'Pricing', to: '/pricing' },
+            { label: 'Calculator', to: '/calculator' },
         ],
     },
     {
@@ -27,6 +28,8 @@ const footerColumns = [
             { label: 'How scrap rates work', to: '/how-scrap-rates-work' },
             { label: 'Sort scrap at home', to: '/sort-scrap-at-home' },
             { label: 'Materials explained', to: '/materials-recycling-explained' },
+            { label: 'Rate history', to: '/rate-history' },
+            { label: 'Updates', to: '/updates' },
         ],
     },
     {

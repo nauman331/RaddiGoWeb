@@ -23,6 +23,9 @@ const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
 const HowScrapRatesWork = lazy(() => import('./pages/HowScrapRatesWork'))
 const SortScrapAtHome = lazy(() => import('./pages/SortScrapAtHome'))
 const MaterialsRecyclingExplained = lazy(() => import('./pages/MaterialsRecyclingExplained'))
+const Calculator = lazy(() => import('./pages/Calculator'))
+const Updates = lazy(() => import('./pages/Updates'))
+const RateHistory = lazy(() => import('./pages/RateHistory'))
 
 const App: React.FC = () => {
   return (
@@ -49,6 +52,9 @@ const App: React.FC = () => {
         <Route path='/how-scrap-rates-work' element={<HowScrapRatesWork />} />
         <Route path='/sort-scrap-at-home' element={<SortScrapAtHome />} />
         <Route path='/materials-recycling-explained' element={<MaterialsRecyclingExplained />} />
+        <Route path='/calculator' element={<Calculator />} />
+        <Route path='/updates' element={<Updates />} />
+        <Route path='/rate-history' element={<RateHistory />} />
       </Routes>
     </Suspense>
   )

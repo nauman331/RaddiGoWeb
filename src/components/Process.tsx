@@ -1,17 +1,20 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import raddi from '../assets/raddi.jpeg'
+import rikshaw from '../assets/rikshaw.jpeg'
+import van from '../assets/van.jpeg'
 import digitalscale from '../assets/digitalscale.jpeg'
 
 // General advice for selling scrap anywhere — not a RaddiGo booking flow.
 // RaddiGo does not offer pickup booking on this site.
+// Each step uses a different real photo; the hero image (raddi.jpeg) is
+// used once on the home page, in the Hero, and not repeated here.
 const steps = [
     {
         title: 'Check the rate first',
         description:
             'Look up the per-kg rate for your material on the live rates page, so you know roughly what your scrap is worth before you talk to any buyer.',
-        img: raddi,
-        alt: 'Mixed scrap materials sorted for recycling',
+        img: rikshaw,
+        alt: 'Rickshaw loaded with scrap materials',
     },
     {
         title: 'Sort and weigh honestly',
@@ -24,8 +27,8 @@ const steps = [
         title: 'Compare offers, then sell',
         description:
             'Rates change with the market and with quality and quantity. Compare more than one offer, confirm the rate and the weight, and only then agree to sell.',
-        img: raddi,
-        alt: 'Stacked newspapers and sorted scrap ready to sell',
+        img: van,
+        alt: 'Van used to carry sorted scrap',
     },
 ]
 

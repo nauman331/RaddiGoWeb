@@ -2,6 +2,8 @@ import React from 'react'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import { NavLink } from 'react-router-dom'
+import RateCheckedStamp from '../components/RateCheckedStamp'
+import LastUpdated from '../components/LastUpdated'
 
 const rates = [
     { material: 'Newspaper', rate: 'Rs. 80/kg', note: 'Keep dry and bundled; wet paper is usually valued lower.' },
@@ -22,6 +24,7 @@ const LiveRates: React.FC = () => {
                     The per-kg rates shown on this site for common scrap materials. Use them as a guide before you talk
                     to a buyer — they are not a promise of what any particular buyer will pay.
                 </p>
+                <RateCheckedStamp />
 
                 <div className="mt-10 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
                     <table className="w-full min-w-[520px] text-left">
@@ -112,6 +115,12 @@ const LiveRates: React.FC = () => {
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink
+                        to="/calculator"
+                        className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
+                    >
+                        Work out your scrap's value
+                    </NavLink>
+                    <NavLink
                         to="/recycling-guide"
                         className="inline-block rounded-full bg-brand-green px-6 py-3 font-semibold text-white shadow transition hover:brightness-95"
                     >
@@ -121,6 +130,8 @@ const LiveRates: React.FC = () => {
                         How selling works →
                     </NavLink>
                 </div>
+
+                <LastUpdated />
             </main>
             <Footer />
         </div>

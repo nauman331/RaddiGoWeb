@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import LastUpdated from '../components/LastUpdated'
 
 const About: React.FC = () => {
     return (
@@ -13,6 +14,14 @@ const About: React.FC = () => {
                     RaddiGo ki shuruaat ek simple masle se hui: Lahore mein raddi bechne wale ko aksar yeh nahi pata
                     hota ke uski cheez ki asli qeemat kya hai. Rate zabani bataya jata hai, wazan ka andaza nahi hota,
                     aur bechne wala bina maloomat ke faisla kar leta hai.
+                </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">RaddiGo kaun chalata hai</h2>
+                <p className="mt-3 text-slate-600">
+                    Is site ko Muhammad Nauman chalate hain. Muhammad Nauman, a Lahore-based full-stack developer,
+                    runs RaddiGo. Wo raddi bechne walon ke liye saaf rates aur rehnumai shaya karte hain. Rabta sirf
+                    email se hai: hello@raddigo.pk. Site par koi jhooti team, jhooti degree ya jhoota dawa nahi hai —
+                    jo kuch likha hai, wo sirf maloomat aur rehnumai hai.
                 </p>
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Hum kya karte hain</h2>
@@ -57,12 +66,19 @@ const About: React.FC = () => {
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Maloomat kaise tayaar ki jati hai</h2>
                 <p className="mt-3 text-slate-600">
-                    Is site par rates aur rehnumai aam samajh aur market ki bunyad par likhi jati hai. Rates per-kg
-                    aur saaf dikhaye jate hain, aur har page par yeh likha hota hai ke rates indicative hain aur
-                    market ke sath badalte hain. Sorting ki rehnumai aam aadmi ki zuban mein likhi jati hai, mushkil
-                    lafzon mein nahi. Hum koi jhooti tadaad, jhoota dawa ya na-mukammal wada shaya nahi karte — jo
-                    maloomat di jati hai, wo sirf rehnumai ke liye hai, aur bechne se pehle buyer se confirm karna
-                    hamesha zaroori hai.
+                    Is site par rates aur rehnumai aam samajh aur market ki bunyad par likhi jati hai — koi dealer,
+                    market ya kharidar ka naam is mein shamil nahi, aur rates kisi aik buyer ki offer nahi hain.
+                    Rates per-kg aur saaf dikhaye jate hain, aur har page par yeh likha hota hai ke rates indicative
+                    hain aur market ke sath badalte hain.
+                </p>
+                <p className="mt-3 text-slate-600">
+                    Rates ko waqt par dobara check karne ka nizaam ab shuru kiya gaya hai: har check ki tareekh aur
+                    natija — rate badla ya nahi — rate history page par aam tor par darj kiya jata hai. Pehli asal
+                    check abhi darj nahi hui; jab hogi to us ki tareekh wahin likhi jayegi. Jab tak pehli check darj
+                    nahi hoti, is site par shaya rates wohi hain jo pehle se shaya thay. Sorting ki rehnumai aam aadmi
+                    ki zuban mein likhi jati hai, mushkil lafzon mein nahi. Hum koi jhooti tadaad, jhoota dawa ya
+                    na-mukammal wada shaya nahi karte — jo maloomat di jati hai, wo sirf rehnumai ke liye hai, aur
+                    bechne se pehle buyer se confirm karna hamesha zaroori hai.
                 </p>
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Recycling kyun zaroori hai</h2>
@@ -100,6 +116,8 @@ const About: React.FC = () => {
                     jald theek kar sakein. Aap ki report se site sab ke liye behtar hoti hai, aur ghalat maloomat
                     waqt par theek ho jati hai.
                 </p>
+
+                <LastUpdated />
 
                 <div className="mt-8 flex flex-wrap gap-4">
                     <NavLink

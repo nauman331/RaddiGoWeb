@@ -2,12 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import ArticleJsonLd from '../components/ArticleJsonLd'
+import LastUpdated from '../components/LastUpdated'
 
 const HowScrapRatesWork: React.FC = () => {
     return (
         <div className="bg-white font-sans text-slate-800 antialiased">
             <Navbar />
             <main className="mx-auto max-w-4xl px-6 py-16">
+                <ArticleJsonLd
+                    headline="How scrap rates work in Pakistan"
+                    description="Why scrap rates change and how to judge an offer: market, material quality, and quantity."
+                    url="https://www.raddigo.tech/how-scrap-rates-work"
+                />
                 <h1 className="text-3xl font-heading font-bold text-brand-dark">How scrap rates work in Pakistan</h1>
                 <p className="mt-4 text-lg text-slate-600">
                     If you have ever sold old newspapers, plastic bottles, or a broken iron stand, you have probably
@@ -73,6 +80,22 @@ const HowScrapRatesWork: React.FC = () => {
                     basis.
                 </p>
 
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Grades and condition: why the same material gets different offers</h2>
+                <p className="mt-3 text-slate-600">
+                    The rate on this site is for clean, dry, separated material. The same material in a worse
+                    condition is usually valued lower, and the gap can be large. Three examples show why:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li><strong>Clean copper vs mixed copper:</strong> bare, uncoated copper wire with nothing attached is the easiest copper to reuse, because it needs almost no preparation. Copper wire still in its plastic coating, or copper mixed with other metals and fittings, needs stripping and sorting first — so it is usually valued lower than clean copper, even though the metal inside is the same.</li>
+                    <li><strong>Dry paper vs wet paper:</strong> dry newspaper keeps its fibre strength and can be pulped cleanly. Wet paper loses fibre strength, can grow mould, and is often refused or heavily discounted. A bundle that got rained on is not the same material as a dry bundle, even if it weighs more.</li>
+                    <li><strong>Clean iron vs rusted or mixed iron:</strong> clean iron and steel are straightforward to melt down. Heavily rusted iron, and iron mixed with other waste, plastic parts, or non-metal fittings, needs extra handling and sorting — so buyers usually discount it. Keeping iron dry and apart from other waste protects its value.</li>
+                </ul>
+                <p className="mt-3 text-slate-600">
+                    None of this changes the published guide rates — those are the rates for the material in good,
+                    separated condition. It explains why an offer for material in poor condition can be lower, and why
+                    sorting and keeping material dry is the cheapest way to protect its value.
+                </p>
+
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Common traps to watch for</h2>
                 <p className="mt-3 text-slate-600">
                     The most common trap is the mixed pile: everything weighed together at one low rate, even though
@@ -92,6 +115,30 @@ const HowScrapRatesWork: React.FC = () => {
                     with another buyer before deciding. That is the whole point of publishing rates openly: a seller
                     who knows the number cannot easily be given a number that is far below it.
                 </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Further reading</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Scrap" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Scrap — Wikipedia
+                        </a>
+                        {' '}— what scrap metal is, how it is graded, and how it is recycled.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Recycling — Wikipedia
+                        </a>
+                        {' '}— how recycling works in general, and why sorting matters.
+                    </li>
+                    <li>
+                        <a href="https://www.lwmc.com.pk/" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Lahore Waste Management Company (LWMC)
+                        </a>
+                        {' '}— Lahore's official waste management company.
+                    </li>
+                </ul>
+
+                <LastUpdated />
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink

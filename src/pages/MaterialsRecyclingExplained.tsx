@@ -2,12 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import ArticleJsonLd from '../components/ArticleJsonLd'
+import LastUpdated from '../components/LastUpdated'
 
 const MaterialsRecyclingExplained: React.FC = () => {
     return (
         <div className="bg-white font-sans text-slate-800 antialiased">
             <Navbar />
             <main className="mx-auto max-w-4xl px-6 py-16">
+                <ArticleJsonLd
+                    headline="Paper, plastic, and metal recycling, explained"
+                    description="Paper, plastic and metal recycling explained: what each material is, how it is recycled, and how to sort it."
+                    url="https://www.raddigo.tech/materials-recycling-explained"
+                />
                 <h1 className="text-3xl font-heading font-bold text-brand-dark">Paper, plastic, and metal recycling, explained</h1>
                 <p className="mt-4 text-lg text-slate-600">
                     When you sell old newspapers, a plastic bottle, or a piece of iron, where does it actually go? What
@@ -68,6 +75,24 @@ const MaterialsRecyclingExplained: React.FC = () => {
                     — they are not just another metal, they are a mixed product that needs its own handling.
                 </p>
 
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Grades: clean vs mixed material</h2>
+                <p className="mt-3 text-slate-600">
+                    Recyclers do not buy "paper" or "metal" — they buy a grade, and the grade is decided by how clean
+                    and separated the material is. The same kilogram can be worth very different amounts depending on
+                    its condition:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li><strong>Copper:</strong> bare, uncoated wire is the cleanest grade — it can go straight to melting. Wire still in its plastic coating, or copper mixed with brass fittings and other metals, has to be stripped and sorted first, so it is usually valued lower.</li>
+                    <li><strong>Paper:</strong> dry, clean newspaper and office paper pulp cleanly. Wet paper loses fibre strength and can grow mould; food-stained or laminated paper contaminates the pulp and is often refused. Dry paper and wet paper are not the same grade, even though both are paper.</li>
+                    <li><strong>Iron:</strong> clean iron and steel go straight to the furnace. Heavily rusted iron, and iron mixed with plastic parts, rubber, or other waste, needs extra handling — so buyers usually discount it.</li>
+                    <li><strong>Plastic:</strong> clear, clean, single-type bottles are the easiest grade to recycle. Thin films, bags, and dirty or food-contaminated plastic are harder to sort and wash, so they are usually valued lower than clean rigid plastic.</li>
+                </ul>
+                <p className="mt-3 text-slate-600">
+                    The guide rates on this site are for clean, dry, separated material. Sorting at home is what moves
+                    your material into the better grade — and that is the practical difference between a fair offer and
+                    a low one.
+                </p>
+
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Why your sorting helps the whole chain</h2>
                 <p className="mt-3 text-slate-600">
                     Every step of recycling — pulping, shredding, melting — works better with clean, separated input.
@@ -82,6 +107,36 @@ const MaterialsRecyclingExplained: React.FC = () => {
                     a new product, and the metal becomes, quite literally, new metal. Recycling is not a slogan — it is
                     a supply chain, and your home is its first step.
                 </p>
+
+                <h2 className="mt-10 text-2xl font-bold text-brand-dark">Further reading</h2>
+                <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Paper_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Paper recycling — Wikipedia
+                        </a>
+                        {' '}— how old paper is pulped and made into new paper, and why fibres shorten each time.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Plastic_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Plastic recycling — Wikipedia
+                        </a>
+                        {' '}— how different plastic types are sorted, washed, and reprocessed.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Copper_recycling" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Copper recycling — Wikipedia
+                        </a>
+                        {' '}— why copper is recovered and reused, and how scrap copper is graded.
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Electronic_waste" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-dark hover:text-brand-green">
+                            Electronic waste — Wikipedia
+                        </a>
+                        {' '}— what old electronics contain, and why they need separate handling.
+                    </li>
+                </ul>
+
+                <LastUpdated />
 
                 <div className="mt-10 flex flex-wrap gap-4">
                     <NavLink

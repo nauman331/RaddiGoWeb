@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import RateCheckedStamp from '../components/RateCheckedStamp'
 
 const BusinessPickup: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const BusinessPickup: React.FC = () => {
                     aur kabhi kabhi loha ya electronics. Is page par bulk material ko sort karne aur rates samajhne ki
                     rehnumai hai. Yeh website pickup ya scheduled service nahi deti; yeh maloomat sirf rehnumai ke liye hai.
                 </p>
+                <RateCheckedStamp />
 
                 <h2 className="mt-10 text-2xl font-bold text-brand-dark">Bulk sorting ka tareeqa</h2>
                 <ul className="mt-3 list-disc space-y-2 pl-6 text-slate-600">
